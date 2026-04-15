@@ -5,6 +5,6 @@ packages = [
   "polars-config-meta"
 ]
 archived = false
-priority = false
+priority = true
 description = "A Polars plugin for persistent DataFrame-level metadata"
 url = "https://github.com/lmmx/polars-config-meta"

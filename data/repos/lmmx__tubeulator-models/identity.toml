@@ -5,6 +5,6 @@ packages = [
   "tubeulator-models"
 ]
 archived = false
-priority = false
+priority = true
 description = "Models of the TfL transit network"
 url = "https://github.com/lmmx/tubeulator-models"

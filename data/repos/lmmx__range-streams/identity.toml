@@ -5,6 +5,6 @@ packages = [
   "range-streams"
 ]
 archived = false
-priority = false
+priority = true
 description = "Streaming via range requests."
 url = "https://github.com/lmmx/range-streams"

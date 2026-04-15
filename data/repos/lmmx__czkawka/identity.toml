@@ -5,6 +5,6 @@ packages = [
   "czkawka"
 ]
 archived = false
-priority = false
+priority = true
 description = "Python bindings for the Czkawka Rust library, a fast image similarity engine"
 url = "https://github.com/lmmx/czkawka"

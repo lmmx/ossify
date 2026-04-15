@@ -5,6 +5,6 @@ packages = [
   "hftorchcache"
 ]
 archived = false
-priority = false
+priority = true
 description = "Efficient caching of Hugging Face models using PyTorch serialisation"
 url = "https://github.com/lmmx/hftorchcache"

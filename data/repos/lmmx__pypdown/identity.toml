@@ -5,6 +5,6 @@ packages = [
   "pypdown"
 ]
 archived = false
-priority = false
+priority = true
 description = "A Pydantic model-based approach to data pipelining with file I/O linting."
 url = "https://github.com/lmmx/pypdown"

@@ -5,6 +5,6 @@ packages = [
   "page-dewarp"
 ]
 archived = false
-priority = false
+priority = true
 description = "Page dewarping and thresholding using a cubic sheet model."
 url = "https://github.com/lmmx/page-dewarp"

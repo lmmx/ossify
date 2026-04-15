@@ -5,6 +5,6 @@ packages = [
   "validate-call-safe"
 ]
 archived = false
-priority = false
+priority = true
 description = "Safe, non-error-raising, alternative to Pydantic validate_call decorator"
 url = "https://github.com/lmmx/validate-call-safe"

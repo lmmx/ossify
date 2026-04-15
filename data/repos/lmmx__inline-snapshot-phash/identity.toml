@@ -5,6 +5,6 @@ packages = [
   "inline-snapshot-phash"
 ]
 archived = false
-priority = false
+priority = true
 description = "Perceptual hash storage protocol for inline-snapshot"
 url = "https://github.com/lmmx/inline-snapshot-phash"

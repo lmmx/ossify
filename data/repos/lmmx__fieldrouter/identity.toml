@@ -6,6 +6,6 @@ packages = [
   "fieldtricks"
 ]
 archived = false
-priority = false
+priority = true
 description = "Data model validation for nested data routes"
 url = "https://github.com/lmmx/fieldrouter"

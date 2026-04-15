@@ -5,6 +5,6 @@ packages = [
   "comrak"
 ]
 archived = false
-priority = false
+priority = true
 description = "Python bindings for the Comrak Rust library, a fast CommonMark/GFM parser"
 url = "https://github.com/lmmx/comrak"

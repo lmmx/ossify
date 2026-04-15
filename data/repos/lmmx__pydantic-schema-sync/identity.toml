@@ -6,6 +6,6 @@ packages = [
   "pytest-pydantic-schema-sync"
 ]
 archived = false
-priority = false
+priority = true
 description = "Synchronise Pydantic model schemas with JSONSchema files"
 url = "https://github.com/lmmx/pydantic-schema-sync"

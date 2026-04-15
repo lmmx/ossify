@@ -5,6 +5,6 @@ packages = [
   "beeb"
 ]
 archived = false
-priority = false
+priority = true
 description = "A modern interface to the BBC Sounds radio catalogue"
 url = "https://github.com/lmmx/beeb"

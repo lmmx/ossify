@@ -5,6 +5,6 @@ packages = [
   "octopolars"
 ]
 archived = false
-priority = false
+priority = true
 description = "Pull, filter, walk, and read a GitHub user's repositories with Polars."
 url = "https://github.com/lmmx/octopolars"
