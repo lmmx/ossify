@@ -39,6 +39,11 @@ header h1 {
   color: #3b35ff;
 }
 
+.subtitle em {
+  font-style: normal;
+  color: black;
+}
+
 #stats {
   font-family: "Space Grotesk", sans-serif;
   font-size: .85rem;
