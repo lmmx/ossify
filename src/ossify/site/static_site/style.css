@@ -155,3 +155,8 @@ a:hover {
 .gridjs-th {
   min-width: 130px !important;
 }
+
+/* Don't make the drag handle wide */
+.gridjs-th.gridjs-resizable {
+  min-width: initial !important;
+}

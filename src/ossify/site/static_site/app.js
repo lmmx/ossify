@@ -75,6 +75,21 @@ function parseAge(str) {
   return Infinity;
 }
 
+function extractCell(v) {
+  return v?.props?.content ?? "";
+}
+
+function parseState(v) {
+  const str = String(extractCell(v));
+
+  if (str.includes("failing")) return 0;
+  if (str.includes("unmaintained")) return 1;
+  if (str.includes("inactive")) return 2;
+  if (str.includes("ok")) return 3;
+
+  return 99;
+}
+
 async function init() {
   const j = await (await fetch("data.json")).json();
   ALL = j.repos;
@@ -86,7 +101,7 @@ async function init() {
       {
         name: "State",
         sort: {
-          compare: (a, b) => a.localeCompare(b)
+          compare: (a, b) => parseState(a) - parseState(b)
         }
       },
 
