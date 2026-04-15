@@ -2,7 +2,7 @@ repo = "lmmx__polars-schema-index"
 owner = "lmmx"
 name = "polars-schema-index"
 packages = [
-    "polars-schema-index",
+  "polars-schema-index"
 ]
 archived = false
 priority = false

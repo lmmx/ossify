@@ -2,7 +2,7 @@ repo = "lmmx__polars-permute-plugin"
 owner = "lmmx"
 name = "polars-permute-plugin"
 packages = [
-    "polars-permute",
+  "polars-permute"
 ]
 archived = false
 priority = false

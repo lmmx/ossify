@@ -19,4 +19,3 @@ conda activate dex
 conda install -y pytorch torchvision cudatoolkit=11.3 -c pytorch
 pip install -r requirements.txt
 ```
-

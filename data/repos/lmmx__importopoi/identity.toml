@@ -2,7 +2,7 @@ repo = "lmmx__importopoi"
 owner = "lmmx"
 name = "importopoi"
 packages = [
-    "importopoi",
+  "importopoi"
 ]
 archived = false
 priority = false

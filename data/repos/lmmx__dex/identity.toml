@@ -2,7 +2,7 @@ repo = "lmmx__dex"
 owner = "lmmx"
 name = "dex"
 packages = [
-    "spindex",
+  "spindex"
 ]
 archived = false
 priority = false

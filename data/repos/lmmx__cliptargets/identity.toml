@@ -2,7 +2,7 @@ repo = "lmmx__cliptargets"
 owner = "lmmx"
 name = "cliptargets"
 packages = [
-    "cliptargets",
+  "cliptargets"
 ]
 archived = false
 priority = false

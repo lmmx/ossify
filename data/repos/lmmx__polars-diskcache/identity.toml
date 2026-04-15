@@ -2,7 +2,7 @@ repo = "lmmx__polars-diskcache"
 owner = "lmmx"
 name = "polars-diskcache"
 packages = [
-    "polars-diskcache",
+  "polars-diskcache"
 ]
 archived = false
 priority = false

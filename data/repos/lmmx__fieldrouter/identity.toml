@@ -2,8 +2,8 @@ repo = "lmmx__fieldrouter"
 owner = "lmmx"
 name = "fieldrouter"
 packages = [
-    "fieldrouter",
-    "fieldtricks",
+  "fieldrouter",
+  "fieldtricks"
 ]
 archived = false
 priority = false

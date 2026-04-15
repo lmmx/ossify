@@ -2,7 +2,7 @@ repo = "lmmx__rehome"
 owner = "lmmx"
 name = "rehome"
 packages = [
-    "rehome",
+  "rehome"
 ]
 archived = false
 priority = false

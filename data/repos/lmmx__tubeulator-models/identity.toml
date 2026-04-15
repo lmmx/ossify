@@ -2,7 +2,7 @@ repo = "lmmx__tubeulator-models"
 owner = "lmmx"
 name = "tubeulator-models"
 packages = [
-    "tubeulator-models",
+  "tubeulator-models"
 ]
 archived = false
 priority = false

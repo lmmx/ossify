@@ -2,7 +2,7 @@ repo = "lmmx__chinois"
 owner = "lmmx"
 name = "chinois"
 packages = [
-    "chinois",
+  "chinois"
 ]
 archived = false
 priority = false

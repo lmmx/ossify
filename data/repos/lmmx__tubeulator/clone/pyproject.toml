@@ -1,47 +1,47 @@
 [build-system]
 build-backend = "uv_build"
 requires = [
-    "uv_build>=0.9.26,<0.10.0",
+  "uv_build>=0.9.26,<0.10.0"
 ]
 
 [dependency-groups]
 dev = [
-    "pdbpp>=0.12.1",
-    "pre-commit>=4.1.0",
+  "pdbpp>=0.12.1",
+  "pre-commit>=4.1.0"
 ]
 docs = [
-    "mkdocs-material[imaging,recommended]>=9.5.2",
-    "mkdocs-section-index>=0.3.8",
-    "mkdocs>=1.5.3",
-    "mkdocstrings[python]>=0.24.0",
+  "mkdocs-material[imaging,recommended]>=9.5.2",
+  "mkdocs-section-index>=0.3.8",
+  "mkdocs>=1.5.3",
+  "mkdocstrings[python]>=0.24.0"
 ]
 test = [
-    "inline-snapshot>=0.9.0",
-    "pytest-custom-exit-code>=0.3.0",
-    "pytest-xdist>=3.6.1",
-    "pytest>=7.4.0",
+  "inline-snapshot>=0.9.0",
+  "pytest-custom-exit-code>=0.3.0",
+  "pytest-xdist>=3.6.1",
+  "pytest>=7.4.0"
 ]
 
 [project]
 authors = [
-    {email = "louismmx@gmail.com", name = "Louis Maddox"},
+  {email = "louismmx@gmail.com", name = "Louis Maddox"}
 ]
 classifiers = [
-    "Intended Audience :: Developers",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13"
 ]
 dependencies = [
-    "defopt",
-    "httpx",
-    "jsonschema",
-    "orjson",
-    "patito>=0.8.6",
-    "polars>=1.39.3",
-    "pydantic>=2.6.4",
-    "tinydb>=4.8.2",
+  "defopt",
+  "httpx",
+  "jsonschema",
+  "orjson",
+  "patito>=0.8.6",
+  "polars>=1.39.3",
+  "pydantic>=2.6.4",
+  "tinydb>=4.8.2"
 ]
 description = "TfL open data interface library."
 name = "tubeulator"
@@ -54,10 +54,10 @@ text = "MIT"
 
 [project.optional-dependencies]
 folium = [
-    "folium>=0.16.0",
+  "folium>=0.16.0"
 ]
 lts-cpu = [
-    "polars[rtcompat]>=1.39.3",
+  "polars[rtcompat]>=1.39.3"
 ]
 
 [project.scripts]
@@ -69,27 +69,27 @@ Repository = "https://github.com/lmmx/tubeulator.git"
 
 [tool.ruff.lint]
 ignore = [
-    "C408",
-    "C901",
-    "E501",
-    "E741",
+  "C408",
+  "C901",
+  "E501",
+  "E741"
 ]
 ignore-init-module-imports = true
 select = [
-    "C",
-    "E",
-    "F",
-    "I",
-    "UP",
-    "W",
+  "C",
+  "E",
+  "F",
+  "I",
+  "UP",
+  "W"
 ]
 
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = [
-    "E401",
+  "E401"
 ]
 "src/tubeulator/codegen/load_test.py" = [
-    "F401",
+  "F401"
 ]
 
 [tool.ruff.lint.pydocstyle]

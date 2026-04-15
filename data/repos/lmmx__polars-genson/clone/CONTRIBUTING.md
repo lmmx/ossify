@@ -7,4 +7,3 @@
 5. Submit a pull request
 
 See [DEVELOPMENT.md](DEVELOPMENT.md) for further setup instructions.
-

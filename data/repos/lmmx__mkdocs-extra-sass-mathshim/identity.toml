@@ -2,7 +2,7 @@ repo = "lmmx__mkdocs-extra-sass-mathshim"
 owner = "lmmx"
 name = "mkdocs-extra-sass-mathshim"
 packages = [
-    "mkdocs-extra-sass-mathshim",
+  "mkdocs-extra-sass-mathshim"
 ]
 archived = false
 priority = false

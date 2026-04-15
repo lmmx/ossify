@@ -534,9 +534,9 @@ itself (silly as there's a `description` built in to `git`?)
 Using this let me generate a nice README for the spin.systems superrepo:
 
 > # spin.systems
-> 
+>
 > spin.systems: [`ss`](https://gitlab.com/spin.systems/spin.systems.gitlab.io)
-> 
+>
 > - `cal`: [q ⠶ cal](https://gitlab.com/qu-cal/qu-cal.gitlab.io)
 > - `log`: [∫ ⠶ log](https://gitlab.com/spin-log/spin-log.gitlab.io)
 > - `conf`: [q ⠶ conf](https://gitlab.com/qu-conf/qu-conf.gitlab.io)

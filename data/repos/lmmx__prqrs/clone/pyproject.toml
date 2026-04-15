@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 authors = [
-  {email = "louismmx@gmail.com", name = "Louis Maddox"},
+  {email = "louismmx@gmail.com", name = "Louis Maddox"}
 ]
 classifiers = [
   "License :: OSI Approved :: MIT License",
@@ -12,13 +12,13 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
   "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.11"
 ]
 description = "Benchmarked priority queue implementation in Rust"
 dynamic = ["version"]
 keywords = [
   "priority queue",
-  "pyo3",
+  "pyo3"
 ]
 license = {text = "MIT"}
 name = "prqrs"
@@ -27,7 +27,7 @@ requires-python = ">=3.10,<3.12"
 
 [project.optional-dependencies]
 dev = [
-  "pre-commit>=4.1.0",
+  "pre-commit>=4.1.0"
 ]
 
 [tool.maturin]

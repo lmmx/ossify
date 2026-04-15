@@ -2,7 +2,7 @@ repo = "lmmx__polars-expr-hopper"
 owner = "lmmx"
 name = "polars-expr-hopper"
 packages = [
-    "polars-expr-hopper",
+  "polars-expr-hopper"
 ]
 archived = false
 priority = false

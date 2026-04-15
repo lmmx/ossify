@@ -2,7 +2,7 @@ repo = "lmmx__htmd"
 owner = "lmmx"
 name = "htmd"
 packages = [
-    "htmd-py",
+  "htmd-py"
 ]
 archived = false
 priority = false

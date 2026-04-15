@@ -2,7 +2,7 @@ repo = "lmmx__pydantree"
 owner = "lmmx"
 name = "pydantree"
 packages = [
-    "pydantree",
+  "pydantree"
 ]
 archived = false
 priority = false

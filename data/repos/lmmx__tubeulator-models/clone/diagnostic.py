@@ -43,7 +43,7 @@ for item in data:
     norm = _normalize(item["station"])
     norm = _ALIASES.get(norm, norm)
     n_ic = len(
-        [ic for ic in item.get("interchanges", []) if ic.get("minutes") is not None]
+        [ic for ic in item.get("interchanges", []) if ic.get("minutes") is not None],
     )
     if n_ic > 0:
         ic_lookup[norm] = n_ic

@@ -10,7 +10,7 @@ ci_opt := if env("PRE_COMMIT_HOME", "") != "" { "-ci" } else { "" }
 precommit:
     just pc{{ci_opt}}
 
-pc:     fmt code-quality lint 
+pc:     fmt code-quality lint
 pc-fix: fmt code-quality-fix
 pc-ci:      code-quality
 
@@ -24,7 +24,7 @@ prepush-rs:
     just clippy-cli
     just docs-core
     just docs-cli
-    
+
 
 # (Not running ty in lint recipe)
 lint: ruff-check # lint-action
@@ -108,18 +108,18 @@ test-ci *args:
     #!/usr/bin/env -S echo-comment --color bright-green
     # 🏃 Running Rust tests...
     cargo test {{args}}
-    
+
     # 📚 Running documentation tests...
     cargo test --doc {{args}}
 
 [working-directory: 'genson-core']
 test-core *args:
     cargo nextest run {{args}} -F avro
-    
+
 [working-directory: 'genson-cli']
 test-cli *args:
     cargo nextest run {{args}}
-    
+
 test-pl *args:
     just py-test {{args}}
 
@@ -171,7 +171,7 @@ ty-ci:
     # Current directory: $(pwd)
     # Python available: $(which python3 || echo 'none')
     # UV available: $(which uv || echo 'none')
-    
+
     ## Check if .venv exists, if not extract from compressed CI venv
     if [ ! -d ".venv" ]; then
         # 📦 Extracting compressed stubs for CI...
@@ -179,7 +179,7 @@ ty-ci:
             # Found compressed stubs, extracting...
             tar -xzf .stubs/venv.tar.gz
             mv venv .venv
-            
+
             ## Fix pyvenv.cfg with current absolute path
             if [ -f ".venv/pyvenv.cfg" ]; then
                 CURRENT_DIR=$(pwd)
@@ -188,14 +188,14 @@ ty-ci:
                 # Updated pyvenv.cfg contents:
                 cat ".venv/pyvenv.cfg"
             fi
-            
+
             # ✅ Extraction complete, running diagnostics...
-            
+
             ## Diagnostic checks
             # 🔍 Venv structure check:
             ls -la .venv/ | head -5
             #
-            
+
             # 🔍 Python interpreter check:
             if [ -f ".venv/bin/python" ]; then
                 # Python executable exists
@@ -204,7 +204,7 @@ ty-ci:
                 # ❌ No Python executable found
                 ls -la .venv/bin/ | head -5
             fi
-            
+
             # 🔍 Site-packages check:
             SITE_PACKAGES=".venv/lib/python*/site-packages"
             if ls $SITE_PACKAGES >/dev/null 2>&1; then
@@ -213,21 +213,21 @@ ty-ci:
             else
                 # ❌ No site-packages directory found
             fi
-            
+
             # 🔍 Environment activation test:
             export PATH="$(pwd)/.venv/bin:$PATH"
             export VIRTUAL_ENV="$(pwd)/.venv"
             export PYTHONPATH=""  # Clear any existing PYTHONPATH
-            
+
             # Active Python: $(which python)
             python --version || echo "❌ Python activation failed"
-            
+
             # 🔍 Critical imports test:
             python -c 'import sys; print("✓ Python sys module working"); print("Python executable:", sys.executable)' || echo "❌ Basic Python test failed"
             python -c 'import polars as pl; print("✓ Polars import successful, version:", pl.__version__)' || echo "❌ Polars import failed"
             python -c 'import polars_genson; print("✓ Polars Genson import successful")' || echo "❌ Polars Genson import failed"
             python -c 'import pytest; print("✓ Pytest import successful")' || echo "❌ Pytest import failed"
-            
+
         else
             # ❌ No stubs found, running regular setup...
             just setup
@@ -237,7 +237,7 @@ ty-ci:
         export PATH="$(pwd)/.venv/bin:$PATH"
         export VIRTUAL_ENV="$(pwd)/.venv"
     fi
-    
+
     # 🚀 Running ty check...
     just t
 
@@ -266,7 +266,7 @@ py: py-dev py-test
 py-dev:
     $(uv python find) -m maturin develop
 
-# Develop Python plugin (release mode)  
+# Develop Python plugin (release mode)
 [working-directory: 'polars-genson-py']
 py-release:
     $(uv python find) -m maturin develop --release
@@ -281,7 +281,7 @@ py-test *args:
 py-schema:
     $(uv python find) schema_demo.py
 
-# Quick test to verify basic functionality  
+# Quick test to verify basic functionality
 [working-directory: 'polars-genson-py']
 py-quick:
     #!/usr/bin/env bash
@@ -289,9 +289,9 @@ py-quick:
     import polars as pl
     import polars_genson
     import json
-    
+
     print('Testing polars-genson plugin...')
-    
+
     df = pl.DataFrame({
         'json_data': [
             '{\"name\": \"Alice\", \"age\": 30}',
@@ -299,21 +299,21 @@ py-quick:
             '{\"name\": \"Charlie\", \"age\": 35, \"email\": \"charlie@example.com\"}'
         ]
     })
-    
+
     print('Input DataFrame:')
     print(df)
-    
+
     schema = df.genson.infer_json_schema('json_data')
     print('\nInferred schema:')
     print(json.dumps(schema, indent=2))
-    
+
     # Verify schema structure
     assert 'type' in schema
     assert 'properties' in schema
     props = schema['properties']
     assert 'name' in props
     assert 'age' in props
-    
+
     print('\n✅ Schema inference successful!')
     print(f'Found properties: {list(props.keys())}')
     "
@@ -408,7 +408,7 @@ refresh-stubs *args="":
     #!/usr/bin/env -S echo-comment --shell-flags="-e" --color bright-green
     rm -rf .stubs
     set -e  # Exit on any error
-    
+
     ## Check if --debug flag is passed and export DEBUG_PYSNOOPER
     debug_flag=false
     uv_args="--no-group debug"
@@ -419,7 +419,7 @@ refresh-stubs *args="":
         debug_flag=true
         uv_args=""  # Remove --no-group debug when in debug mode
     fi
-    
+
     uv sync --no-group build $uv_args
     ./stub_gen.py
     deactivate
@@ -427,7 +427,7 @@ refresh-stubs *args="":
     just run-pc
     rm -rf .venv
     mv offvenv .venv
-    
+
     ## Unset DEBUG_PYSNOOPER if it was set
     if [[ "$debug_flag" == "true" ]]; then
         unset DEBUG_PYSNOOPER
@@ -455,15 +455,15 @@ ship-wheels mode="":
     ## -p wheel* downloads only artifacts matching the "wheel*" pattern
     gh run watch "$(gh run list -L 1 --json databaseId --jq .[0].databaseId)" {{mode}} --exit-status
     gh run download "$(gh run list -L 1 --json databaseId --jq .[0].databaseId)" -p wheel*
-    
+
     # 🧹 Clean up any existing dist directory and create a fresh one
     rm -rf dist/
     mkdir dist/
-    
+
     # 🎯 Move all wheel-* artifacts into dist/ and delete their temporary directories
     mv wheel*/* dist/
     rm -rf wheel*/
-    
+
     # 🎊 Publish the CI-built wheels to PyPI
     uv publish -u __token__ -p $(keyring get PYPIRC_TOKEN "")
 
@@ -547,24 +547,24 @@ ship-rust-manual:
     cargo set-version -p genson-core --bump patch
     cargo set-version -p polars-jsonschema-bridge --bump patch
     cargo set-version -p genson-cli --bump patch
-    
+
     # Commit and tag (using the new CLI version as tag)
     git add .
     git commit -m "chore(release): 🦀 Upgrades"
-    
+
     git tag genson-core-v$(cargo metadata --no-deps --format-version 1 \
       | jq -r '.packages[] | select(.name=="genson-core") | .version')
-    
+
     git tag polars-jsonschema-bridge-v$(cargo metadata --no-deps --format-version 1 \
       | jq -r '.packages[] | select(.name=="polars-jsonschema-bridge") | .version')
-    
+
     git tag genson-cli-v$(cargo metadata --no-deps --format-version 1 \
       | jq -r '.packages[] | select(.name=="genson-cli") | .version')
-    
+
     # Push to remote
     git push
     git push --tags
-    
+
     # Publish in dependency order
     cargo publish -p genson-core
     cargo publish -p polars-jsonschema-bridge

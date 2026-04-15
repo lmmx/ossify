@@ -1,4 +1,5 @@
 """Run all stages in order, or a single stage. Each stage is idempotent."""
+
 from __future__ import annotations
 
 import argparse
@@ -16,14 +17,14 @@ from ossify.site.build import build as build_site
 
 
 STAGES = {
-    "discover":  ("Scrape PyPI user page → package names",        discover),
-    "pypi-json": ("Fetch /pypi/{pkg}/json for each package",      fetch_pypi),
-    "repos":     ("Derive repo set from PyPI metadata",           derive),
-    "clone":     ("Sparse-clone each repo",                       clone_all),
-    "commits":   ("Fetch commit logs via gh api",                 fetch_commits),
-    "classify":  ("Run rules → per-category TOML files",          classify_all),
-    "parquet":   ("Compose TOMLs → data/repos.parquet",           build_parquet),
-    "site":      ("Build static site from parquet",               build_site),
+    "discover": ("Scrape PyPI user page → package names", discover),
+    "pypi-json": ("Fetch /pypi/{pkg}/json for each package", fetch_pypi),
+    "repos": ("Derive repo set from PyPI metadata", derive),
+    "clone": ("Sparse-clone each repo", clone_all),
+    "commits": ("Fetch commit logs via gh api", fetch_commits),
+    "classify": ("Run rules → per-category TOML files", classify_all),
+    "parquet": ("Compose TOMLs → data/repos.parquet", build_parquet),
+    "site": ("Build static site from parquet", build_site),
 }
 
 
@@ -47,18 +48,24 @@ def run_all() -> None:
         prog="ossify",
         description="Open Source Software Intelligence For You. Runs all stages in order by default.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="Stages:\n" + "\n".join(f"  {k:10s} {desc}" for k, (desc, _) in STAGES.items()),
+        epilog="Stages:\n"
+        + "\n".join(f"  {k:10s} {desc}" for k, (desc, _) in STAGES.items()),
     )
     parser.add_argument(
-        "--only", choices=list(STAGES), action="append",
+        "--only",
+        choices=list(STAGES),
+        action="append",
         help="Run only this stage (repeatable). Default: run everything.",
     )
     parser.add_argument(
-        "--from", dest="start", choices=list(STAGES),
+        "--from",
+        dest="start",
+        choices=list(STAGES),
         help="Start from this stage and run all subsequent stages.",
     )
     parser.add_argument(
-        "--list", action="store_true",
+        "--list",
+        action="store_true",
         help="List stages and exit.",
     )
     args = parser.parse_args()

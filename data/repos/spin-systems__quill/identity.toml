@@ -2,7 +2,7 @@ repo = "spin-systems__quill"
 owner = "spin-systems"
 name = "quill"
 packages = [
-    "ql",
+  "ql"
 ]
 archived = false
 priority = false

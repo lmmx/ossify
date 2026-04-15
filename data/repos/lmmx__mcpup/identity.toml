@@ -2,7 +2,7 @@ repo = "lmmx__mcpup"
 owner = "lmmx"
 name = "mcpup"
 packages = [
-    "mcpup",
+  "mcpup"
 ]
 archived = false
 priority = false

@@ -7,9 +7,9 @@ from setuptools import find_packages, setup
 
 NAME = "godto"
 PROJECT_URLS = {
-    #"Documentation": f"https://{NAME}.readthedocs.io/",
-    "Bug Tracker": f"https://github.com/lmmx/godto/issues",
-    "Source Code": f"https://github.com/lmmx/godto",
+    # "Documentation": f"https://{NAME}.readthedocs.io/",
+    "Bug Tracker": "https://github.com/lmmx/godto/issues",
+    "Source Code": "https://github.com/lmmx/godto",
 }
 CLASSIFIERS = [
     "Development Status :: 4 - Beta",
@@ -27,9 +27,9 @@ CLASSIFIERS = [
 INSTALL_REQUIRES = Path("requirements.txt").read_text().splitlines()
 EXTRAS_REQUIRE = {
     "docs": [
-        #"sphinx>=4",
-        #"sphinx_rtd_theme",
-        #"sphinx-autodoc-typehints",
+        # "sphinx>=4",
+        # "sphinx_rtd_theme",
+        # "sphinx-autodoc-typehints",
     ],
     "tests": ["coverage[toml]>=5.5", "pytest"],
 }
@@ -63,7 +63,7 @@ def find_meta(meta):
     meta_match = re.search(rf"^__{meta}__ = ['\"]([^'\"]*)['\"]", META_FILE, re.M)
     if meta_match:
         return meta_match.group(1)
-    raise RuntimeError("Unable to find __{meta}__ string.".format(meta=meta))
+    raise RuntimeError(f"Unable to find __{meta}__ string.")
 
 
 if __name__ == "__main__":

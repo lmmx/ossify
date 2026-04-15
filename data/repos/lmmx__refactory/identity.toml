@@ -2,7 +2,7 @@ repo = "lmmx__refactory"
 owner = "lmmx"
 name = "refactory"
 packages = [
-    "refactory",
+  "refactory"
 ]
 archived = false
 priority = false

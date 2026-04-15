@@ -2,7 +2,7 @@ repo = "lmmx__grepow"
 owner = "lmmx"
 name = "grepow"
 packages = [
-    "grepow",
+  "grepow"
 ]
 archived = false
 priority = false

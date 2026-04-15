@@ -2,7 +2,7 @@ repo = "lmmx__tsutil-py"
 owner = "lmmx"
 name = "tsutil-py"
 packages = [
-    "tsutil-py",
+  "tsutil-py"
 ]
 archived = false
 priority = false

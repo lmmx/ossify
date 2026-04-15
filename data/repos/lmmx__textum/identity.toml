@@ -2,7 +2,7 @@ repo = "lmmx__textum"
 owner = "lmmx"
 name = "textum"
 packages = [
-    "textum",
+  "textum"
 ]
 archived = false
 priority = false

@@ -67,13 +67,13 @@ Running Powell Method benchmarks with hyperfine...
 Benchmark 1: scipy
   Time (mean ± σ):     693.1 ms ±   8.3 ms    [User: 3383.1 ms, System: 37.6 ms]
   Range (min … max):   681.9 ms … 710.6 ms    10 runs
- 
+
 Benchmark 2: powell-opt
   Time (mean ± σ):      13.0 ms ±   1.4 ms    [User: 9.6 ms, System: 3.3 ms]
   Range (min … max):    11.7 ms …  17.4 ms    231 runs
- 
+
   Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet system without any interferences from other programs. It might help to use the '--warmup' or '--prepare' options.
- 
+
 Summary
   powell-opt ran
    53.38 ± 5.72 times faster than scipy

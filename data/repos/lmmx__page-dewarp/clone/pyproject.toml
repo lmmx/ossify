@@ -9,7 +9,7 @@ dev = [
   "pdbpp>=0.11.7",
   "pre-commit>=4.1.0",
   "pytest>=8.3.2",
-  "towncrier>=24.8.0",
+  "towncrier>=24.8.0"
 ]
 docs = ["mkdocstrings[python]>=1.0", "zensical>=0.0.11"]
 jax = ["jax>=0.6.2"]
@@ -18,7 +18,7 @@ jax-cuda-13 = ["jax[cuda13]>=0.8.0 ; python_full_version >= '3.11'"]
 test = ["czkawka>=0.1.2", "inline-snapshot>=0.30.1", "pytest>=7.4.0"]
 
 [project]
-authors = [{ email = "louismmx@gmail.com", name = "Louis Maddox" }]
+authors = [{email = "louismmx@gmail.com", name = "Louis Maddox"}]
 classifiers = [
   "Development Status :: 6 - Mature",
   "License :: OSI Approved :: MIT License",
@@ -29,7 +29,7 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
   "Topic :: Multimedia :: Graphics :: Graphics Conversion",
-  "Topic :: Scientific/Engineering :: Image Processing",
+  "Topic :: Scientific/Engineering :: Image Processing"
 ]
 dependencies = [
   "matplotlib",
@@ -37,7 +37,7 @@ dependencies = [
   "numpy>1.25",
   "opencv-python",
   "scipy",
-  "sympy",
+  "sympy"
 ]
 description = "Page dewarping and thresholding using a cubic sheet model."
 keywords = [
@@ -46,7 +46,7 @@ keywords = [
   "dewarping",
   "document scanning",
   "image correction",
-  "image processing",
+  "image processing"
 ]
 name = "page-dewarp"
 readme = "README.md"
@@ -143,4 +143,4 @@ showcontent = true
 default-groups = ["build", "dev", "jax", "test"]
 
 [tool.uv.sources]
-mdx-truly-sane-lists = { git = "https://github.com/radude/mdx_truly_sane_lists.git" }
+mdx-truly-sane-lists = {git = "https://github.com/radude/mdx_truly_sane_lists.git"}

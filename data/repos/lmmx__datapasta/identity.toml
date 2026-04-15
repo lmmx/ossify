@@ -2,7 +2,7 @@ repo = "lmmx__datapasta"
 owner = "lmmx"
 name = "datapasta"
 packages = [
-    "datapasta",
+  "datapasta"
 ]
 archived = false
 priority = false

@@ -82,7 +82,7 @@ jobs:
               [build]
               target = "i686-unknown-linux-gnu"
               rustflags = ["-C", "link-arg=-m32"]
-              
+
               [target.i686-unknown-linux-gnu]
               rustflags = ["-C", "link-arg=-m32"]
               EOF

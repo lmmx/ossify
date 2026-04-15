@@ -2,7 +2,7 @@ repo = "lmmx__classipypi"
 owner = "lmmx"
 name = "classipypi"
 packages = [
-    "classipypi",
+  "classipypi"
 ]
 archived = false
 priority = false

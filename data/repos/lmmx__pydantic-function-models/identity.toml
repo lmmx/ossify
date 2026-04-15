@@ -2,7 +2,7 @@ repo = "lmmx__pydantic-function-models"
 owner = "lmmx"
 name = "pydantic-function-models"
 packages = [
-    "pydantic-function-models",
+  "pydantic-function-models"
 ]
 archived = false
 priority = false
