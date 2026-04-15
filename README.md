@@ -30,6 +30,36 @@ That runs all stages in order. Each is also a separate entrypoint:
 
 Each stage is idempotent — re-running only redoes work whose inputs changed.
 
+## Usage
+
+```py
+usage: ossify [-h]
+              [--only {discover,pypi-json,repos,clone,commits,classify,parquet,site}]
+              [--from {discover,pypi-json,repos,clone,commits,classify,parquet,site}]
+              [--list]
+
+Open Source Software Intelligence For You. Runs all stages in order by default.
+
+options:
+  -h, --help            show this help message and exit
+  --only {discover,pypi-json,repos,clone,commits,classify,parquet,site}
+                        Run only this stage (repeatable). Default: run
+                        everything.
+  --from {discover,pypi-json,repos,clone,commits,classify,parquet,site}
+                        Start from this stage and run all subsequent stages.
+  --list                List stages and exit.
+
+Stages:
+  discover   Scrape PyPI user page → package names
+  pypi-json  Fetch /pypi/{pkg}/json for each package
+  repos      Derive repo set from PyPI metadata
+  clone      Sparse-clone each repo
+  commits    Fetch commit logs via gh api
+  classify   Run rules → per-category TOML files
+  parquet    Compose TOMLs → data/repos.parquet
+  site       Build static site from parquet
+```
+
 ## Layout
 
 - `data/cache/` — fetched HTML, PyPI JSON, commit logs (re-fetchable)
