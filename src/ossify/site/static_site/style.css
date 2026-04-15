@@ -144,8 +144,14 @@ a:hover {
   font-weight: 500;
 }
 
-/* first column spacing */
+/* First column spacing */
 .gridjs-td:first-child,
 .gridjs-th:first-child {
-  min-width: 80px;
+  min-width: 100px !important;
+}
+
+/* Column spacing */
+.gridjs-td,
+.gridjs-th {
+  min-width: 130px !important;
 }
