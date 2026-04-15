@@ -6,14 +6,13 @@ import argparse
 import sys
 import time
 
-from ossify.extract.pypi_user import discover
-from ossify.extract.pypi_json import fetch_all as fetch_pypi
-from ossify.extract.repos import derive
-from ossify.extract.commits import fetch_all as fetch_commits
 from ossify.compose import classify_all
+from ossify.extract.commits import fetch_all as fetch_commits
+from ossify.extract.pypi_json import fetch_all as fetch_pypi
+from ossify.extract.pypi_user import discover
+from ossify.extract.repos import derive
 from ossify.persist import build_parquet
 from ossify.site.build import build as build_site
-
 
 STAGES = {
     "discover": ("Scrape PyPI user page → package names", discover),
@@ -39,6 +38,35 @@ def _run_stage(key: str) -> None:
         print(f"  ✗ {key} failed: {exc.__class__.__name__}: {exc}", flush=True)
         raise
     print(f"  ✓ {key} done in {time.monotonic() - t0:.1f}s", flush=True)
+
+
+def _stage_entrypoint(key: str):
+    """Build a console-script callable for a single stage.
+
+    Stage functions return a Path; bare console scripts would call
+    sys.exit() on that, which exits with code 1. Routing through
+    _run_stage swallows the return value and handles errors uniformly.
+    """
+
+    def entry() -> None:
+        try:
+            _run_stage(key)
+        except KeyboardInterrupt:
+            sys.exit(130)
+        except Exception:
+            sys.exit(1)
+
+    entry.__name__ = f"{key.replace('-', '_')}_cli"
+    return entry
+
+
+discover_cli = _stage_entrypoint("discover")
+pypi_cli = _stage_entrypoint("pypi-json")
+repos_cli = _stage_entrypoint("repos")
+commits_cli = _stage_entrypoint("commits")
+classify_cli = _stage_entrypoint("classify")
+build_cli = _stage_entrypoint("parquet")
+site_cli = _stage_entrypoint("site")
 
 
 def run_all() -> None:

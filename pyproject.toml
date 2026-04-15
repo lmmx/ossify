@@ -21,14 +21,14 @@ dependencies = [
 ]
 
 [project.scripts]
-ossify = "ossify.cli:run_all"
-ossify-discover = "ossify.extract.pypi_user:discover"
-ossify-pypi = "ossify.extract.pypi_json:fetch_all"
-ossify-repos = "ossify.extract.repos:derive"
-ossify-commits = "ossify.extract.commits:fetch_all"
-ossify-classify = "ossify.compose:classify_all"
-ossify-build = "ossify.persist:build_parquet"
-ossify-site = "ossify.site.build:build"
+ossify          = "ossify.cli:run_all"
+ossify-discover = "ossify.cli:discover_cli"
+ossify-pypi     = "ossify.cli:pypi_cli"
+ossify-repos    = "ossify.cli:repos_cli"
+ossify-commits  = "ossify.cli:commits_cli"
+ossify-classify = "ossify.cli:classify_cli"
+ossify-build    = "ossify.cli:build_cli"
+ossify-site     = "ossify.cli:site_cli"
 
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = [
