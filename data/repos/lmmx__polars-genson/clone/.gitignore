@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.ruff_cache/
+site/
+.cache/
+
+# Virtual environments
+.venv
+
+*.swp
+
+confidential*
+
+target/
+
+*.so
+.pdm*

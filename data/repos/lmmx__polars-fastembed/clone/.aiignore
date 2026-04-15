@@ -1,0 +1,10 @@
+.aiignore
+.git
+target
+.pdm-build
+.venv
+*.so
+*.lock
+.fastembed_cache
+.pre-commit-config.yaml
+.ruff_cache

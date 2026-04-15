@@ -1,0 +1,10 @@
+repo = "lmmx__chinois"
+owner = "lmmx"
+name = "chinois"
+packages = [
+    "chinois",
+]
+archived = false
+priority = false
+description = "CSS selector implementation for Bisque and Campbells web scraping libraries."
+url = "https://github.com/lmmx/chinois"

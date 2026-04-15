@@ -1,0 +1,6 @@
+bs4
+defopt
+html5lib
+httpx
+sphinx
+sphobjinv

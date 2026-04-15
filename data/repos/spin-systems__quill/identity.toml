@@ -1,0 +1,10 @@
+repo = "spin-systems__quill"
+owner = "spin-systems"
+name = "quill"
+packages = [
+    "ql",
+]
+archived = false
+priority = false
+description = "spin.systems generator and driver"
+url = "https://github.com/spin-systems/quill"

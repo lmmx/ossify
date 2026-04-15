@@ -1,0 +1,10 @@
+repo = "lmmx__polars-permute-plugin"
+owner = "lmmx"
+name = "polars-permute-plugin"
+packages = [
+    "polars-permute",
+]
+archived = false
+priority = false
+description = "A Polars plugin for easily reordering DataFrame columns"
+url = "https://github.com/lmmx/polars-permute-plugin"

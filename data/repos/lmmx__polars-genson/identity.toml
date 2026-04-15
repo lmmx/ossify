@@ -1,0 +1,10 @@
+repo = "lmmx__polars-genson"
+owner = "lmmx"
+name = "polars-genson"
+packages = [
+    "polars-genson",
+]
+archived = false
+priority = false
+description = "A Polars plugin for JSON schema inference using genson-rs."
+url = "https://github.com/lmmx/polars-genson"

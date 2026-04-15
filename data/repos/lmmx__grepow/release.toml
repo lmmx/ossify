@@ -1,0 +1,4 @@
+version_count = 2
+last_release_at = "2026-02-03T17:07:35.870935+00:00"
+publish_mode = "ci"
+publish_auth = "trusted"

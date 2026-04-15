@@ -1,0 +1,10 @@
+repo = "lmmx__ansi-to-html"
+owner = "lmmx"
+name = "ansi-to-html"
+packages = [
+    "ansi-to-html-py",
+]
+archived = false
+priority = false
+description = "Python bindings for the ansi-to-html Rust library, a fast ANSI terminal output to HTML converter"
+url = "https://github.com/lmmx/ansi-to-html"

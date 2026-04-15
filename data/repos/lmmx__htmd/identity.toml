@@ -1,0 +1,10 @@
+repo = "lmmx__htmd"
+owner = "lmmx"
+name = "htmd"
+packages = [
+    "htmd-py",
+]
+archived = false
+priority = false
+description = "Python bindings for the htmd Rust library, a fast HTML to Markdown converter"
+url = "https://github.com/lmmx/htmd"

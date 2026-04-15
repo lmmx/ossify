@@ -1,0 +1,10 @@
+repo = "lmmx__pydantic-function-models"
+owner = "lmmx"
+name = "pydantic-function-models"
+packages = [
+    "pydantic-function-models",
+]
+archived = false
+priority = false
+description = "Migrating v1 Pydantic ValidatedFunction to v2."
+url = "https://github.com/lmmx/pydantic-function-models"

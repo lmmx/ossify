@@ -1,0 +1,10 @@
+repo = "lmmx__datapasta"
+owner = "lmmx"
+name = "datapasta"
+packages = [
+    "datapasta",
+]
+archived = false
+priority = false
+description = "Paste data as Python DataFrame definitions"
+url = "https://github.com/lmmx/datapasta"

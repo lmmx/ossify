@@ -1,5 +1,4 @@
 """Compute human/bot commit counts and last-commit timestamps."""
-
 from __future__ import annotations
 
 from datetime import datetime, timedelta, timezone
@@ -12,12 +11,7 @@ from .._base import RepoContext, RuleResult
 name = "activity.commit_attribution"
 
 
-def _is_bot(
-    name: str | None,
-    email: str | None,
-    name_pats: list[str],
-    email_pats: list[str],
-) -> bool:
+def _is_bot(name: str | None, email: str | None, name_pats: list[str], email_pats: list[str]) -> bool:
     n = (name or "").lower()
     e = (email or "").lower()
     return any(p in n for p in name_pats) or any(p in e for p in email_pats)
@@ -36,9 +30,18 @@ def rule(ctx: RepoContext) -> RuleResult | None:
     window_days = cfg["window_days"]
     cutoff = datetime.now(timezone.utc) - timedelta(days=window_days)
 
+    # GitHub returns ISO-8601 with Z suffix, e.g. 2024-03-15T12:34:56Z.
+    # Parse eagerly with explicit format; coerce errors to null.
     df = df.with_columns(
-        pl.col("author_date").str.to_datetime(strict=False).alias("dt"),
-    )
+        pl.col("author_date").str.to_datetime(
+            format="%Y-%m-%dT%H:%M:%S%#z",
+            strict=False,
+            time_zone="UTC",
+        ).alias("dt")
+    ).drop_nulls(subset=["dt"])
+
+    if df.height == 0:
+        return RuleResult("activity", {})
 
     bot_flags = [
         _is_bot(n, e, name_pats, email_pats)
@@ -56,15 +59,12 @@ def rule(ctx: RepoContext) -> RuleResult | None:
     total = h + b
     ratio = (h / total) if total > 0 else None
 
-    return RuleResult(
-        "activity",
-        {
-            "last_commit_at": last_commit_at,
-            "last_human_commit_at": last_human,
-            "last_bot_commit_at": last_bot,
-            "human_commits_window": h,
-            "bot_commits_window": b,
-            "human_ratio_window": ratio,
-            "window_days": window_days,
-        },
-    )
+    return RuleResult("activity", {
+        "last_commit_at": last_commit_at,
+        "last_human_commit_at": last_human,
+        "last_bot_commit_at": last_bot,
+        "human_commits_window": h,
+        "bot_commits_window": b,
+        "human_ratio_window": ratio,
+        "window_days": window_days,
+    })

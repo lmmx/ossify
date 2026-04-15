@@ -1,0 +1,10 @@
+repo = "lmmx__bisque"
+owner = "lmmx"
+name = "bisque"
+packages = [
+    "bisque",
+]
+archived = false
+priority = false
+description = "Web scraping into structured Pydantic data models."
+url = "https://github.com/lmmx/bisque"

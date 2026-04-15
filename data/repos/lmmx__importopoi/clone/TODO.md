@@ -1,0 +1,3 @@
+- Consider ways to display extra-package dependencies
+  - Perhaps from a filtered list, e.g. which modules have logging instrumented, etc.
+  - Different colour scheme for stdlib/external dependent modules

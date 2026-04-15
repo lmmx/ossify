@@ -1,0 +1,10 @@
+repo = "lmmx__iofx"
+owner = "lmmx"
+name = "iofx"
+packages = [
+    "iofx",
+]
+archived = false
+priority = false
+description = "IO effect handlers for Python"
+url = "https://github.com/lmmx/iofx"

@@ -1,0 +1,10 @@
+repo = "lmmx__polars-schema-index"
+owner = "lmmx"
+name = "polars-schema-index"
+packages = [
+    "polars-schema-index",
+]
+archived = false
+priority = false
+description = "A Polars plugin for flattening nested data"
+url = "https://github.com/lmmx/polars-schema-index"

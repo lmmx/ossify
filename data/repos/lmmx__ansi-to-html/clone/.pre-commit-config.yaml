@@ -1,0 +1,27 @@
+ci:
+  autofix_commit_msg: "chore(pre-commit): autofix run"
+  autoupdate_commit_msg: "chore(pre-commit): autoupdate hooks"
+
+default_install_hook_types:
+  - pre-commit
+  - commit-msg
+
+repos:
+  - repo: https://github.com/lmmx/just-pre-commit
+    rev: v0.6.5
+    hooks:
+      - id: run-just-rust
+        args: [precommit-fix]
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.21.2
+    hooks:
+      - id: pyupgrade
+        args: [--py310-plus]
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.10
+    hooks:
+      # Run the linter
+      - id: ruff
+        args: [--fix]
+      # Run the formatter
+      - id: ruff-format

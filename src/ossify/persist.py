@@ -1,8 +1,9 @@
 """Compose per-category TOMLs into RepoRecord; write data/repos.parquet."""
-
 from __future__ import annotations
 
 import tomllib
+from datetime import datetime
+from enum import Enum
 from pathlib import Path
 from typing import Any
 
@@ -10,8 +11,7 @@ import polars as pl
 
 from ossify.defaults import paths
 from ossify.models import (
-    CATEGORY_MODELS,
-    RepoRecord,
+    CATEGORY_MODELS, RepoRecord,
 )
 
 
@@ -45,33 +45,40 @@ def _load_record(slug_dir: Path) -> RepoRecord | None:
     )
 
 
+def _scalar(v: Any) -> Any:
+    """Coerce a value into something Polars can store natively."""
+    if v is None:
+        return None
+    if isinstance(v, Enum):
+        return v.value
+    if isinstance(v, (set, frozenset)):
+        return sorted(_scalar(x) for x in v)
+    if isinstance(v, tuple):
+        return [_scalar(x) for x in v]
+    if isinstance(v, list):
+        return [_scalar(x) for x in v]
+    if isinstance(v, datetime):
+        return v
+    # Pydantic HttpUrl, Path, etc — stringify.
+    if not isinstance(v, (str, int, float, bool, bytes)):
+        return str(v)
+    return v
+
+
 def _flatten(rec: RepoRecord) -> dict[str, Any]:
     """Flatten a RepoRecord to a single row for parquet."""
     d: dict[str, Any] = {}
-    for cat_key in (
-        "identity",
-        "activity",
-        "verification",
-        "release",
-        "deps",
-        "modernisation",
-        "presentation",
-    ):
+    for cat_key in ("identity", "activity", "verification", "release",
+                    "deps", "modernisation", "presentation"):
         cat = getattr(rec, cat_key)
         for fname, fval in cat.model_dump(mode="python").items():
-            if isinstance(fval, frozenset) or isinstance(fval, set):
-                fval = sorted(str(x) for x in fval)
-            if isinstance(fval, tuple):
-                fval = list(fval)
-            d[f"{cat_key}.{fname}"] = fval
+            d[f"{cat_key}.{fname}"] = _scalar(fval)
     return d
 
 
 def build_parquet() -> Path:
     p = paths()
-    slugs = [
-        d for d in sorted(p["repos_dir"].iterdir()) if (d / "identity.toml").exists()
-    ]
+    slugs = [d for d in sorted(p["repos_dir"].iterdir()) if (d / "identity.toml").exists()]
     rows = []
     for slug_dir in slugs:
         rec = _load_record(slug_dir)
@@ -85,5 +92,5 @@ def build_parquet() -> Path:
     out = p["parquet_path"]
     out.parent.mkdir(parents=True, exist_ok=True)
     df.write_parquet(out)
-    print(f"Wrote {df.height} records → {out}")
+    print(f"  wrote {df.height} records → {out}", flush=True)
     return out

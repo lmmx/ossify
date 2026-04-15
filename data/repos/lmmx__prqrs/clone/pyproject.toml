@@ -1,0 +1,34 @@
+[build-system]
+requires = ["maturin>=1.4,<2.0", "patchelf"]
+build-backend = "maturin"
+
+[project]
+authors = [
+  {email = "louismmx@gmail.com", name = "Louis Maddox"},
+]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Rust",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+]
+description = "Benchmarked priority queue implementation in Rust"
+dynamic = ["version"]
+keywords = [
+  "priority queue",
+  "pyo3",
+]
+license = {text = "MIT"}
+name = "prqrs"
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+
+[project.optional-dependencies]
+dev = [
+  "pre-commit>=4.1.0",
+]
+
+[tool.maturin]
+features = ["pyo3/extension-module", "pyo3/generate-import-lib"]

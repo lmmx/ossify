@@ -1,0 +1,5 @@
+aiostream
+httpx
+python-ranges
+pyzstd
+tqdm

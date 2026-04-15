@@ -1,0 +1,10 @@
+repo = "lmmx__tsutil-py"
+owner = "lmmx"
+name = "tsutil-py"
+packages = [
+    "tsutil-py",
+]
+archived = false
+priority = false
+description = "Syntax tree printer utility"
+url = "https://github.com/lmmx/tsutil-py"

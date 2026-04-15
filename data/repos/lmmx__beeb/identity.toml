@@ -1,0 +1,10 @@
+repo = "lmmx__beeb"
+owner = "lmmx"
+name = "beeb"
+packages = [
+    "beeb",
+]
+archived = false
+priority = false
+description = "A modern interface to the BBC Sounds radio catalogue"
+url = "https://github.com/lmmx/beeb"

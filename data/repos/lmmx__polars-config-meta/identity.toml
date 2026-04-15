@@ -1,0 +1,10 @@
+repo = "lmmx__polars-config-meta"
+owner = "lmmx"
+name = "polars-config-meta"
+packages = [
+    "polars-config-meta",
+]
+archived = false
+priority = false
+description = "A Polars plugin for persistent DataFrame-level metadata"
+url = "https://github.com/lmmx/polars-config-meta"

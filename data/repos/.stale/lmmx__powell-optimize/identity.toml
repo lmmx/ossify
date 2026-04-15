@@ -1,0 +1,10 @@
+repo = "lmmx__powell-optimize"
+owner = "lmmx"
+name = "powell-optimize"
+packages = [
+    "powell-opt",
+]
+archived = false
+priority = false
+description = "Python bindings for the Powell method from scirs2-optimize"
+url = "https://github.com/lmmx/powell-optimize"

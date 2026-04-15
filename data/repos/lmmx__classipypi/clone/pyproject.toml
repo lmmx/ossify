@@ -1,0 +1,81 @@
+[project]
+name = "classipypi"
+dynamic = ["version"]
+description = "Neurosymbolic PyPI package classifier selector."
+authors = [
+    {name = "Louis Maddox", email = "louismmx@gmail.com"},
+]
+keywords = [
+    "pydantic",
+    "pypi",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Topic :: Software Development :: Libraries",
+    'Framework :: Pydantic',
+    'Framework :: Pydantic :: 2',
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "pydantic>=2.4.2",
+    "defopt",
+    "trove-classifiers>=2023.10.18",
+    "tomli-w>=1.0.0",
+]
+requires-python = ">=3.10,<3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.urls]
+Homepage = "https://github.com/lmmx/classipypi"
+Repository = "https://github.com/lmmx/classipypi.git"
+
+[project.scripts]
+classipypi = "classipypi.cli:run_cli"
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs-macros-plugin>=1.0.5",
+    "mkdocs-material[recommended,imaging]>=9.5.2",
+    "mkdocs-section-index>=0.3.8",
+    "mkdocs>=1.5.3",
+    "mkdocstrings[python]>=0.24.0",
+    "urllib3<2",  # Vercel: https://github.com/squidfunk/mkdocs-material/discussions/6470
+]
+outlines = [
+    "datasets>=2.14.6",
+    "numpy>=1.26",
+    "outlines>=0.0.9",
+    "torch>=2.1.0",
+    "transformers",
+    "accelerate>=0.24.1",
+    "bitsandbytes>=0.41.2.post2",
+    "protobuf>=4.25.1",
+    "sentencepiece>=0.1.99",
+]
+dev = [
+    "pre-commit>=4.1.0",
+]
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+version = { source = "file", path = "src/classipypi/__init__.py" }
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=7.4.0",
+]
+
+[[tool.pdm.source]]
+name = "PyTorch"
+url = "https://download.pytorch.org/whl/cu118"
+include_packages = ["torch"]
+
+[tool.isort]
+known_first_party = ["classipypi"]

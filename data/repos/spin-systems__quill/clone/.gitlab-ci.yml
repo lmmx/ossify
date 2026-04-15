@@ -1,0 +1,29 @@
+image: "python:3.12"
+
+before_script:
+  - eval "$(ssh-agent -s)"
+    # Following: https://serverfault.com/questions/856194/securely-add-a-host-e-g-github-to-the-ssh-known-hosts-file
+  - GITLAB_FINGERPRINT=$(ssh-keyscan -t ed25519 gitlab.com | tee gitlab-key-temp | ssh-keygen -lf -)
+  - GITLAB_EXPECTED_FINGERPRINT="256 SHA256:eUXGGm1YGsMAS7vkcx6JOJdOGHPem5gQp4taiCfCLB8 gitlab.com (ED25519)"
+  - if [ ! "$GITLAB_FINGERPRINT" = "$GITLAB_EXPECTED_FINGERPRINT" ]; then echo "Error - SSH fingerprint mismatch" 1>&2 && exit 25519; fi
+  - mkdir -p ~/.ssh # This shouldn't be necessary but getting an error that "file/dir. doesn't exist" on next line
+  - cat gitlab-key-temp >> ~/.ssh/known_hosts && rm gitlab-key-temp
+  - gitlab_ssh_key_decoded=$(echo "${SSH_priv_key_GitLab_ci2}" | base64 --decode | tr -d "\r")
+  - echo "${SSH_priv_key_GitLab_ci2}" | base64 --decode | tr -d "\r" | wc -c # Should be 419
+  - python3.12 -c "s = \"\"\"${gitlab_ssh_key_decoded}\"\"\"; print('SSH newline check:', s.endswith('\n'))"
+  - ssh-add <(echo "${gitlab_ssh_key_decoded}")
+    #ssh-add <(echo "${SSH_priv_key_GitLab_ci2}" | base64 --decode | tr -d "\r")
+  - ssh-add <(echo "${SSH_priv_key_GitHub}" | base64 --decode)
+  - git config --global user.email "${git_email}"
+  - git config --global user.name "${full_name}"
+  - python3.12 -m pip install "ql"
+
+stages:
+  - QL
+
+quill:
+  stage: QL
+  script:
+  - python3.12 -c "import markdown as md; test_md1 = md.markdown('''\`\`\`sh\nls\n\`\`\`''', extensions=['fenced_code']); print(test_md1)"
+  - python3.12 -c "import markdown as md; test_md2 = md.markdown('''\`\`\`py\nprint(1)\n\`\`\`''', extensions='fenced_code codehilite sane_lists'.split()); print(test_md2)"
+  - ql --gitlab-ci

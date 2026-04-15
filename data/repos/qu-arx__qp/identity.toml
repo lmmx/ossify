@@ -1,0 +1,10 @@
+repo = "qu-arx__qp"
+owner = "qu-arx"
+name = "qp"
+packages = [
+    "qpdb",
+]
+archived = false
+priority = false
+description = "Pandas API reference"
+url = "https://github.com/qu-arx/qp"

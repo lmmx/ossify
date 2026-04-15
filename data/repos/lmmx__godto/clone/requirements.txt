@@ -1,0 +1,4 @@
+defopt
+jsonschema
+pydantic[email]
+ujson

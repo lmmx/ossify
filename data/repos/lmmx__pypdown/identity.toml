@@ -1,0 +1,10 @@
+repo = "lmmx__pypdown"
+owner = "lmmx"
+name = "pypdown"
+packages = [
+    "pypdown",
+]
+archived = false
+priority = false
+description = "A Pydantic model-based approach to data pipelining with file I/O linting."
+url = "https://github.com/lmmx/pypdown"

@@ -1,0 +1,28 @@
+[build-system]
+requires = [
+  "pdm-backend"
+]
+build-backend = "pdm.backend"
+
+[project]
+name = "hftorchcache"
+version = "0.0.2"
+description = "Efficient caching of Hugging Face models using PyTorch serialisation"
+authors = [
+  {name = "Louis Maddox", email = "louismmx@gmail.com"}
+]
+dependencies = [
+  "accelerate>=1.3.0",
+  "platformdirs>=4.3.6",
+  "torch>=2.0.0",
+  "transformers>=4.0.0"
+]
+requires-python = ">=3.10"
+readme = "README.md"
+
+[project.license]
+text = "MIT"
+
+[project.urls]
+Homepage = "https://github.com/lmmx/hftorchcache"
+Repository = "https://github.com/lmmx/hftorchcache.git"

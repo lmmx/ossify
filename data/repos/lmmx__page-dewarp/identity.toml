@@ -1,0 +1,10 @@
+repo = "lmmx__page-dewarp"
+owner = "lmmx"
+name = "page-dewarp"
+packages = [
+    "page-dewarp",
+]
+archived = false
+priority = false
+description = "Page dewarping and thresholding using a cubic sheet model."
+url = "https://github.com/lmmx/page-dewarp"

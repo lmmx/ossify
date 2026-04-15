@@ -1,0 +1,89 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  get-python-versions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      python-versions: ${{ steps.get-versions.outputs.python-versions }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Get Python versions from pyproject.toml
+        id: get-versions
+        run: |
+          set -xeuo pipefail
+          MIN_VERSION=$(uvx --from=toml-cli toml get --toml-path=pyproject.toml project.requires-python | sed 's/>=//;s/"//g')
+
+          PYO3_FFI_VERSION=$(curl -sL "https://raw.githubusercontent.com/lmmx/czkawka/refs/heads/master/Cargo.lock" | awk '/name = "pyo3-ffi"/ {getline; gsub(/"/,"",$3); print $3}')
+
+          LIST=$(uv python list --all-versions --output-format json)
+
+          # Download the crate once and reuse the Cargo.toml extraction to avoid repeated curl calls
+          TMP_CRATE=$(mktemp)
+          curl -sL "https://static.crates.io/crates/pyo3-ffi/pyo3-ffi-$PYO3_FFI_VERSION.crate" -o "$TMP_CRATE"
+          # extract Cargo.toml content from the downloaded crate
+          CARGO_TOML_CONTENT=$(tar -xzO -f "$TMP_CRATE" "pyo3-ffi-$PYO3_FFI_VERSION/Cargo.toml" 2>/dev/null || true)
+          # CARGO_TOML_CONTENT=$(gzip -dc "$TMP_CRATE" | tar -xO --wildcards '*/Cargo.toml')
+          # get the supported CPython max version from the pyo3-ffi crate (from the extracted Cargo.toml)
+          MAX_VERSION=$(echo "$CARGO_TOML_CONTENT" | uvx --from=toml-cli toml get --toml-path=/dev/stdin package.metadata.cpython.max-version | tr -d '"')
+
+          CPYTHON_VERSIONS=$(echo "$LIST" | jq -c --arg min "$MIN_VERSION" --arg max "$MAX_VERSION" '
+            ($min | split(".") | {major: .[0]|tonumber, minor: .[1]|tonumber}) as $minv |
+            ($max | split(".") | {major: .[0]|tonumber, minor: .[1]|tonumber}) as $maxv |
+            [.[] | {v:.version_parts, t:.variant, impl:.implementation}]
+            | unique_by([.v.minor,.t])
+            | map(select(
+                (.impl == "cpython") and
+                (.v.major == 3) and
+                ((.v.major > $minv.major or (.v.major == $minv.major and .v.minor >= $minv.minor)) and
+                 (.v.major < $maxv.major or (.v.major == $maxv.major and .v.minor <= $maxv.minor)))
+              ))
+            | map(select(.t != "freethreaded")) # Delete this line to include FT variants
+            | map("\(.v.major).\(.v.minor)\(if .t=="freethreaded" then "t" else "" end)")')
+
+          # PYPY_VERSIONS=$(echo "$LIST" | jq -c --arg min "$MIN_VERSION" '
+          #   ($min | split(".") | {major: .[0]|tonumber, minor: .[1]|tonumber}) as $minv |
+          #   [.[] | {v:.version_parts, t:.variant, impl:.implementation}]
+          #   | unique_by([.v.minor,.impl])
+          #   | map(select(
+          #       (.impl == "pypy") and
+          #       (.v.major == 3) and
+          #       (.v.minor >= $minv.minor)
+          #     ))
+          #   | map("pypy-\(.v.major).\(.v.minor)")')
+
+          # versions=$(jq -nc --argjson a "$CPYTHON_VERSIONS" --argjson b "$PYPY_VERSIONS" '$a + $b')
+          versions=$(jq -nc --argjson a "$CPYTHON_VERSIONS" '$a')
+
+          echo "python-versions=$versions" >> $GITHUB_OUTPUT
+
+  test-jax:
+    needs: get-python-versions
+    uses: ./.github/workflows/test-with-retry.yml
+    with:
+      backend: jax
+      python-versions: ${{ needs.get-python-versions.outputs.python-versions }}
+      install-command: uv sync --frozen --no-default-groups --group test --group jax
+
+  test-scipy:
+    needs: get-python-versions
+    uses: ./.github/workflows/test-with-retry.yml
+    with:
+      backend: scipy
+      python-versions: ${{ needs.get-python-versions.outputs.python-versions }}
+      install-command: uv sync --frozen --no-default-groups --group test

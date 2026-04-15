@@ -1,0 +1,63 @@
+[build-system]
+build-backend = "pdm.backend"
+requires = [
+  "pdm-backend"
+]
+
+[dependency-groups]
+dev = [
+  "pdm>=2.22.3",
+  "pdm-bump>=0.9.10"
+]
+
+[project]
+name = "igloosphinx"
+version = "0.1.3"
+description = "Accessing Intersphinx inventories for Python packages using PyPI metadata to locate documentation sites"
+readme = "README.md"
+authors = [
+  {name = "Louis Maddox", email = "louismmx@gmail.com"}
+]
+requires-python = ">=3.11"
+dependencies = [
+  "click>=8.1.8",
+  "pypi-docs-url>=0.1.4",
+  "requests>=2.32.3",
+  "sphobjinv>=2.3.1.2"
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13"
+]
+
+[project.optional-dependencies]
+polars = [
+  "polars>=1.21.0"
+]
+polars-lts-cpu = [
+  "polars-lts-cpu>=1.21.0"
+]
+dev = [
+  "pdm>=2.22.3",
+  "pdm-bump>=0.9.10",
+  "pre-commit>=4.1.0",
+  "pytest>=8.3.4"
+]
+
+[project.scripts]
+igloosphinx = "igloosphinx.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/lmmx/igloosphinx"
+Repository = "https://github.com/lmmx/igloosphinx.git"

@@ -1,0 +1,25 @@
+## Development Requirements
+
+I would suggest you install:
+
+- `uv`
+- `just`
+- `pre-commit`
+
+Then run
+
+```sh
+just install-hooks
+just setup
+```
+
+This will run the 'setup' recipe in `Justfile` to give you a local uv virtual environment with the package installed.
+
+## Linting
+
+- Run `just` to run the linter recipes (the default with no arguments).
+- Run `just ty` to run `ty` type checking.
+- Run `just flake` to run `flake8` linting
+- Run `just fmt` to run `ruff format` auto-formatter.
+
+To run the same checks that will run on CI, use `pre-commit run --all-files`

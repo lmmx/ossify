@@ -1,0 +1,36 @@
+[dependencies]
+htmd_lib = {package = "htmd", version = "0.5.4"}
+markup5ever_rcdom = "0.38.0"
+pyo3 = "0.28"
+
+[lib]
+name = "htmd"
+crate-type = ["cdylib"]
+
+[package]
+name = "htmd-py"
+version = "0.1.2"
+edition = "2021"
+description = "Python bindings for htmd, an HTML to Markdown converter."
+license = "MIT"
+repository = "https://github.com/lmmx/htmd"
+homepage = "https://github.com/lmmx/htmd"
+readme = "README.md"
+keywords = ["html", "markdown", "pyo3", "python"]
+categories = ["text-processing"]
+
+[profile.dev]
+opt-level = 0
+lto = false
+codegen-units = 256
+panic = "abort"
+debug = false
+strip = "debuginfo"
+
+[profile.release]
+opt-level = 2
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+debug = false
+strip = "symbols"

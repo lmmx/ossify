@@ -1,0 +1,10 @@
+repo = "lmmx__inline-snapshot-phash"
+owner = "lmmx"
+name = "inline-snapshot-phash"
+packages = [
+    "inline-snapshot-phash",
+]
+archived = false
+priority = false
+description = "Perceptual hash storage protocol for inline-snapshot"
+url = "https://github.com/lmmx/inline-snapshot-phash"
