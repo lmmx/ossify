@@ -78,6 +78,7 @@ async function init() {
     ],
     data: () => filtered().map(row).map(cells => cells.map(c => c.formatted ?? c.data)),
     sort: true,
+    resizable: true,
     search: true,
     pagination: { limit: 100 },
   }).render($("#table"));
