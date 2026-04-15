@@ -62,6 +62,12 @@ function row(r) {
   ].map(c => ({ data: c, formatted: typeof c === "string" && c.includes("<") ? gridjs.html(c) : c }));
 }
 
+function parsePercent(v) {
+  const str = String(v ?? "").replace("%", "").trim();
+  const num = parseFloat(str);
+  return isNaN(num) ? -1 : num;
+}
+
 function parseAge(str) {
   if (!str || str === "—") return Infinity;
   if (str === "today") return 0;
@@ -117,7 +123,12 @@ async function init() {
           compare: (a, b) => parseAge(a) - parseAge(b)
         }
       },
-      "Human %",
+      {
+        name: "Human %",
+        sort: {
+          compare: (a, b) => parsePercent(a) - parsePercent(b)
+        }
+      },
       "Versions",
       {
         name: "Last release",
