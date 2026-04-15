@@ -1,0 +1,10 @@
+repo = "lmmx__grepow"
+owner = "lmmx"
+name = "grepow"
+packages = [
+  "grepow"
+]
+archived = false
+priority = false
+description = "CLI for sparse checkouts of results from grep.app repo search"
+url = "https://github.com/lmmx/grepow"

@@ -1,0 +1,10 @@
+repo = "lmmx__campbells"
+owner = "lmmx"
+name = "campbells"
+packages = [
+  "campbells"
+]
+archived = false
+priority = false
+description = "A condensed web scraping library."
+url = "https://github.com/lmmx/campbells"

@@ -1,0 +1,11 @@
+repo = "lmmx__pydantic-schema-sync"
+owner = "lmmx"
+name = "pydantic-schema-sync"
+packages = [
+  "pydantic-schema-sync",
+  "pytest-pydantic-schema-sync"
+]
+archived = false
+priority = false
+description = "Synchronise Pydantic model schemas with JSONSchema files"
+url = "https://github.com/lmmx/pydantic-schema-sync"

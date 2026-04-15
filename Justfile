@@ -1,6 +1,9 @@
 default:
     ossify
 
+pc:
+    prek run --all-files
+
 discover:
     ossify-discover
 

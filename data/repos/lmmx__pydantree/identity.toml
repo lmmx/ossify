@@ -1,0 +1,10 @@
+repo = "lmmx__pydantree"
+owner = "lmmx"
+name = "pydantree"
+packages = [
+  "pydantree"
+]
+archived = false
+priority = false
+description = "Pydantic parser for tree-sitter"
+url = "https://github.com/lmmx/pydantree"

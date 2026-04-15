@@ -1,6 +1,7 @@
 data/cache/
 data/site/
-data/repos.parquet
+data/repos/*/.extracted
+
 .venv/
 __pycache__/
 *.egg-info/

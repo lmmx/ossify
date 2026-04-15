@@ -1,0 +1,11 @@
+repo = "lmmx__fieldrouter"
+owner = "lmmx"
+name = "fieldrouter"
+packages = [
+  "fieldrouter",
+  "fieldtricks"
+]
+archived = false
+priority = false
+description = "Data model validation for nested data routes"
+url = "https://github.com/lmmx/fieldrouter"

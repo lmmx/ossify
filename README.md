@@ -25,7 +25,7 @@ ossify
 ```
 
 That runs all stages in order. Each is also a separate entrypoint:
-`ossify-discover`, `ossify-pypi`, `ossify-repos`, `ossify-clone`,
+`ossify-discover`, `ossify-pypi`, `ossify-repos`,
 `ossify-commits`, `ossify-classify`, `ossify-build`, `ossify-site`.
 
 Each stage is idempotent — re-running only redoes work whose inputs changed.
@@ -34,28 +34,24 @@ Each stage is idempotent — re-running only redoes work whose inputs changed.
 
 ```py
 usage: ossify [-h]
-              [--only {discover,pypi-json,repos,clone,commits,classify,parquet,site}]
-              [--from {discover,pypi-json,repos,clone,commits,classify,parquet,site}]
+              [--only {discover,pypi-json,repos,commits,classify,parquet,site}]
+              [--from {discover,pypi-json,repos,commits,classify,parquet,site}]
               [--list]
 
-Open Source Software Intelligence For You. Runs all stages in order by default.
+Open Source Software Intelligence For You.
 
 options:
   -h, --help            show this help message and exit
-  --only {discover,pypi-json,repos,clone,commits,classify,parquet,site}
-                        Run only this stage (repeatable). Default: run
-                        everything.
-  --from {discover,pypi-json,repos,clone,commits,classify,parquet,site}
-                        Start from this stage and run all subsequent stages.
-  --list                List stages and exit.
+  --only {discover,pypi-json,repos,commits,classify,parquet,site}
+  --from {discover,pypi-json,repos,commits,classify,parquet,site}
+  --list
 
 Stages:
   discover   Scrape PyPI user page → package names
   pypi-json  Fetch /pypi/{pkg}/json for each package
   repos      Derive repo set from PyPI metadata
-  clone      Sparse-clone each repo
   commits    Fetch commit logs via gh api
-  classify   Run rules → per-category TOML files
+  classify   Sparse-clone, run rules, delete clone
   parquet    Compose TOMLs → data/repos.parquet
   site       Build static site from parquet
 ```

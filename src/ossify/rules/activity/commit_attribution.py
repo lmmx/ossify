@@ -36,9 +36,20 @@ def rule(ctx: RepoContext) -> RuleResult | None:
     window_days = cfg["window_days"]
     cutoff = datetime.now(timezone.utc) - timedelta(days=window_days)
 
+    # GitHub returns ISO-8601 with Z suffix, e.g. 2024-03-15T12:34:56Z.
+    # Parse eagerly with explicit format; coerce errors to null.
     df = df.with_columns(
-        pl.col("author_date").str.to_datetime(strict=False).alias("dt"),
-    )
+        pl.col("author_date")
+        .str.to_datetime(
+            format="%Y-%m-%dT%H:%M:%S%#z",
+            strict=False,
+            time_zone="UTC",
+        )
+        .alias("dt"),
+    ).drop_nulls(subset=["dt"])
+
+    if df.height == 0:
+        return RuleResult("activity", {})
 
     bot_flags = [
         _is_bot(n, e, name_pats, email_pats)

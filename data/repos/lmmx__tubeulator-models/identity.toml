@@ -1,0 +1,10 @@
+repo = "lmmx__tubeulator-models"
+owner = "lmmx"
+name = "tubeulator-models"
+packages = [
+  "tubeulator-models"
+]
+archived = false
+priority = false
+description = "Models of the TfL transit network"
+url = "https://github.com/lmmx/tubeulator-models"

@@ -1,0 +1,10 @@
+repo = "lmmx__rehome"
+owner = "lmmx"
+name = "rehome"
+packages = [
+  "rehome"
+]
+archived = false
+priority = false
+description = "Rehome your Python scripts into nice interconnected modules"
+url = "https://github.com/lmmx/rehome"

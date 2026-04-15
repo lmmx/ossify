@@ -1,0 +1,10 @@
+repo = "lmmx__cliptargets"
+owner = "lmmx"
+name = "cliptargets"
+packages = [
+  "cliptargets"
+]
+archived = false
+priority = false
+description = "Enumerate multiple X11 clipboard targets."
+url = "https://github.com/lmmx/cliptargets"

@@ -1,4 +1,5 @@
 """Run all stages in order, or a single stage. Each stage is idempotent."""
+
 from __future__ import annotations
 
 import argparse
@@ -8,7 +9,6 @@ import time
 from ossify.extract.pypi_user import discover
 from ossify.extract.pypi_json import fetch_all as fetch_pypi
 from ossify.extract.repos import derive
-from ossify.extract.clone import clone_all
 from ossify.extract.commits import fetch_all as fetch_commits
 from ossify.compose import classify_all
 from ossify.persist import build_parquet
@@ -16,14 +16,13 @@ from ossify.site.build import build as build_site
 
 
 STAGES = {
-    "discover":  ("Scrape PyPI user page → package names",        discover),
-    "pypi-json": ("Fetch /pypi/{pkg}/json for each package",      fetch_pypi),
-    "repos":     ("Derive repo set from PyPI metadata",           derive),
-    "clone":     ("Sparse-clone each repo",                       clone_all),
-    "commits":   ("Fetch commit logs via gh api",                 fetch_commits),
-    "classify":  ("Run rules → per-category TOML files",          classify_all),
-    "parquet":   ("Compose TOMLs → data/repos.parquet",           build_parquet),
-    "site":      ("Build static site from parquet",               build_site),
+    "discover": ("Scrape PyPI user page → package names", discover),
+    "pypi-json": ("Fetch /pypi/{pkg}/json for each package", fetch_pypi),
+    "repos": ("Derive repo set from PyPI metadata", derive),
+    "commits": ("Fetch commit logs via gh api", fetch_commits),
+    "classify": ("Sparse-clone, run rules, delete clone", classify_all),
+    "parquet": ("Compose TOMLs → data/repos.parquet", build_parquet),
+    "site": ("Build static site from parquet", build_site),
 }
 
 
@@ -45,22 +44,14 @@ def _run_stage(key: str) -> None:
 def run_all() -> None:
     parser = argparse.ArgumentParser(
         prog="ossify",
-        description="Open Source Software Intelligence For You. Runs all stages in order by default.",
+        description="Open Source Software Intelligence For You.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="Stages:\n" + "\n".join(f"  {k:10s} {desc}" for k, (desc, _) in STAGES.items()),
+        epilog="Stages:\n"
+        + "\n".join(f"  {k:10s} {desc}" for k, (desc, _) in STAGES.items()),
     )
-    parser.add_argument(
-        "--only", choices=list(STAGES), action="append",
-        help="Run only this stage (repeatable). Default: run everything.",
-    )
-    parser.add_argument(
-        "--from", dest="start", choices=list(STAGES),
-        help="Start from this stage and run all subsequent stages.",
-    )
-    parser.add_argument(
-        "--list", action="store_true",
-        help="List stages and exit.",
-    )
+    parser.add_argument("--only", choices=list(STAGES), action="append")
+    parser.add_argument("--from", dest="start", choices=list(STAGES))
+    parser.add_argument("--list", action="store_true")
     args = parser.parse_args()
 
     if args.list:
@@ -72,8 +63,7 @@ def run_all() -> None:
     if args.only:
         keys = [k for k in keys if k in args.only]
     elif args.start:
-        idx = keys.index(args.start)
-        keys = keys[idx:]
+        keys = keys[keys.index(args.start) :]
 
     print(f"ossify: running {len(keys)} stage(s): {', '.join(keys)}", flush=True)
     try:

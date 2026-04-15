@@ -1,0 +1,10 @@
+repo = "lmmx__lol-html"
+owner = "lmmx"
+name = "lol-html"
+packages = [
+  "lol-html-py"
+]
+archived = false
+priority = false
+description = "Async streaming Python bindings for lol_html, a low-output-latency HTML rewriter"
+url = "https://github.com/lmmx/lol-html"

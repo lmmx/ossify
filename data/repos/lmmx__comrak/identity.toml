@@ -1,0 +1,10 @@
+repo = "lmmx__comrak"
+owner = "lmmx"
+name = "comrak"
+packages = [
+  "comrak"
+]
+archived = false
+priority = false
+description = "Python bindings for the Comrak Rust library, a fast CommonMark/GFM parser"
+url = "https://github.com/lmmx/comrak"

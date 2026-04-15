@@ -1,0 +1,10 @@
+repo = "lmmx__textum"
+owner = "lmmx"
+name = "textum"
+packages = [
+  "textum"
+]
+archived = false
+priority = false
+description = "A syntactic patching library with char-level granularity"
+url = "https://github.com/lmmx/textum"

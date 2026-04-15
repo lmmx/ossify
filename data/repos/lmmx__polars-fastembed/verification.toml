@@ -1,0 +1,4 @@
+has_tests = false
+has_ci = true
+ci_runs_tests = true
+precommit_configured = true
