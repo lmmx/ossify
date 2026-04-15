@@ -17,9 +17,9 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
-  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.9"
 ]
-authors = [{ email = "louismmx@gmail.com", name = "Louis Maddox" }]
+authors = [{email = "louismmx@gmail.com", name = "Louis Maddox"}]
 keywords = ["ansi", "html", "rust"]
 readme = "README.md"
 requires-python = ">=3.9"
@@ -33,7 +33,7 @@ dev = [
   "maturin[patchelf]>=1.8.2",
   "pdm>=2.22.3",
   "pdm-bump>=0.9.10",
-  "pre-commit>=4.1.0",
+  "pre-commit>=4.1.0"
 ]
 bench = ["markdown>=3.7", "markdown2>=2.5.3"]
 

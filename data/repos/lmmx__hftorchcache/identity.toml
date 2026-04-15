@@ -2,7 +2,7 @@ repo = "lmmx__hftorchcache"
 owner = "lmmx"
 name = "hftorchcache"
 packages = [
-    "hftorchcache",
+  "hftorchcache"
 ]
 archived = false
 priority = false

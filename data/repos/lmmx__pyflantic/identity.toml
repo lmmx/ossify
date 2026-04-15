@@ -2,7 +2,7 @@ repo = "lmmx__pyflantic"
 owner = "lmmx"
 name = "pyflantic"
 packages = [
-    "pyflantic",
+  "pyflantic"
 ]
 archived = false
 priority = false

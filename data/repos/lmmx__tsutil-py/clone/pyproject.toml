@@ -1,27 +1,26 @@
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
 [project]
 name = "tsutil-py"
 version = "0.1.0"
 description = "Syntax tree printer utility"
 authors = [
-    {name = "Louis Maddox", email = "louismmx@gmail.com"},
+  {name = "Louis Maddox", email = "louismmx@gmail.com"}
 ]
 dependencies = [
-    "termcolor==2.3.0",
-    "tree-sitter>=0.22.3",
-    "tree-sitter-python>=0.21.0",
-    "tree-sitter-rust>=0.21.2",
+  "termcolor==2.3.0",
+  "tree-sitter>=0.22.3",
+  "tree-sitter-python>=0.21.0",
+  "tree-sitter-rust>=0.21.2"
 ]
 requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
 
-[build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
-
+[project.scripts]
+tsutil = "tsutil.main:main"
 
 [tool.pdm]
 distribution = true
-
-[project.scripts]
-tsutil = "tsutil.main:main"

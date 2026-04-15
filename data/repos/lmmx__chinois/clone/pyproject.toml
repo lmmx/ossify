@@ -1,31 +1,35 @@
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
 [project]
 name = "chinois"
 dynamic = ["version"]
 description = "CSS selector implementation for Bisque and Campbells web scraping libraries."
 authors = [
-    {name = "Louis Maddox", email = "louismmx@gmail.com"},
+  {name = "Louis Maddox", email = "louismmx@gmail.com"}
 ]
 keywords = [
-    "CSS",
-    "HTML",
-    "XML",
-    "selector",
-    "filter",
-    "query",
-    "soup",
+  "CSS",
+  "HTML",
+  "XML",
+  "selector",
+  "filter",
+  "query",
+  "soup"
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "Natural Language :: English",
-    "Topic :: Software Development :: Libraries",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
-    "Topic :: Text Processing :: Markup :: HTML",
-    "Topic :: Text Processing :: Markup :: SGML",
-    "Topic :: Text Processing :: Markup :: XML",
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "Topic :: Software Development :: Libraries",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+  "Topic :: Text Processing :: Markup :: HTML",
+  "Topic :: Text Processing :: Markup :: SGML",
+  "Topic :: Text Processing :: Markup :: XML"
 ]
 dependencies = [
 ]
@@ -35,34 +39,32 @@ license = {text = "MIT"}
 
 [project.optional-dependencies]
 campbells = [
-    "campbells>=0.2.0",
+  "campbells>=0.2.0"
 ]
 bisque = [
-    "bisque>=0.1.1",
+  "bisque>=0.1.1"
 ]
 html5lib = [
-    "html5lib>=1.1",
+  "html5lib>=1.1"
 ]
 lxml = [
-    "lxml>=4.9.3",
+  "lxml>=4.9.3"
 ]
 dev = [
-    "pre-commit>=4.1.0",
+  "pre-commit>=4.1.0"
 ]
+
 [project.urls]
 Homepage = "https://github.com/lmmx/chinois"
 Repository = "https://github.com/lmmx/chinois.git"
-[build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
-
-[tool.pdm]
-version = { source = "file", path = "src/chinois/__init__.py" }
-
-[tool.pdm.dev-dependencies]
-test = [
-    "pytest>=7.4.0",
-]
 
 [tool.isort]
 known_first_party = ["chinois"]
+
+[tool.pdm]
+version = {source = "file", path = "src/chinois/__init__.py"}
+
+[tool.pdm.dev-dependencies]
+test = [
+  "pytest>=7.4.0"
+]

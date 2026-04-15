@@ -2,7 +2,7 @@ repo = "lmmx__polars-genson"
 owner = "lmmx"
 name = "polars-genson"
 packages = [
-    "polars-genson",
+  "polars-genson"
 ]
 archived = false
 priority = false

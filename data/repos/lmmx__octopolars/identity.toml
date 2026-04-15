@@ -2,7 +2,7 @@ repo = "lmmx__octopolars"
 owner = "lmmx"
 name = "octopolars"
 packages = [
-    "octopolars",
+  "octopolars"
 ]
 archived = false
 priority = false

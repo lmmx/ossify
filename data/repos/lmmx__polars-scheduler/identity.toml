@@ -2,7 +2,7 @@ repo = "lmmx__polars-scheduler"
 owner = "lmmx"
 name = "polars-scheduler"
 packages = [
-    "polars-scheduler",
+  "polars-scheduler"
 ]
 archived = false
 priority = false

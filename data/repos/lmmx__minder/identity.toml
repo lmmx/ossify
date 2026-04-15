@@ -2,7 +2,7 @@ repo = "lmmx__minder"
 owner = "lmmx"
 name = "minder"
 packages = [
-    "minder",
+  "minder"
 ]
 archived = false
 priority = false

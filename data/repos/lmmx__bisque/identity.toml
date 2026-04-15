@@ -2,7 +2,7 @@ repo = "lmmx__bisque"
 owner = "lmmx"
 name = "bisque"
 packages = [
-    "bisque",
+  "bisque"
 ]
 archived = false
 priority = false

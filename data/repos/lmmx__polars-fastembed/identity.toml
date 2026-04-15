@@ -2,7 +2,7 @@ repo = "lmmx__polars-fastembed"
 owner = "lmmx"
 name = "polars-fastembed"
 packages = [
-    "polars-fastembed",
+  "polars-fastembed"
 ]
 archived = false
 priority = false

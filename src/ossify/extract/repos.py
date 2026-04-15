@@ -353,7 +353,7 @@ def derive() -> Path:
         if not names:
             continue
         sample = ", ".join(names[:5])
-        more = f" (+{len(names)-5} more)" if len(names) > 5 else ""
+        more = f" (+{len(names) - 5} more)" if len(names) > 5 else ""
         print(f"    {src:24s} {len(names):3d}  {sample}{more}", flush=True)
 
     # Loud warning for stale PyPI metadata — these need a fix at the source
@@ -364,7 +364,7 @@ def derive() -> Path:
             flush=True,
         )
         print(
-            f"    Update project_urls in each package's pyproject.toml and re-publish:",
+            "    Update project_urls in each package's pyproject.toml and re-publish:",
             flush=True,
         )
         for pkg_name in stale_meta:

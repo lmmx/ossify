@@ -77,7 +77,7 @@ options:
 qp -u https://arrow.apache.org/docs/
 ```
 
-- To breakpoint and take a look at what info is available, run either 
+- To breakpoint and take a look at what info is available, run either
   `qp --debug` or `qp --debug --no-crawl`
 
 - To crawl each page of the docs, use `--crawl` (experimental)
@@ -87,7 +87,7 @@ qp -u https://arrow.apache.org/docs/
 - To get a list of all the entities in PyTorch (stable version) and their URLs, run:
 
 ```sh
-qp torch -v stable -q | wc -l 
+qp torch -v stable -q | wc -l
 ```
 ⇣
 ```

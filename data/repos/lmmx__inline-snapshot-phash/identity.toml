@@ -2,7 +2,7 @@ repo = "lmmx__inline-snapshot-phash"
 owner = "lmmx"
 name = "inline-snapshot-phash"
 packages = [
-    "inline-snapshot-phash",
+  "inline-snapshot-phash"
 ]
 archived = false
 priority = false

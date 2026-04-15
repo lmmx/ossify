@@ -8,7 +8,7 @@ To get changes merged, create a pull request. Here are a few things to pay atten
 
 ### Commit Messages
 
-The summary of a commit should be concise and worded in an imperative mood.  
+The summary of a commit should be concise and worded in an imperative mood.
 ...a *what* mood? This should clear things up: *[How to Write a Git Commit Message][git-commit-message]*
 
 ### Code Style

@@ -2,7 +2,7 @@ repo = "lmmx__comrak"
 owner = "lmmx"
 name = "comrak"
 packages = [
-    "comrak",
+  "comrak"
 ]
 archived = false
 priority = false

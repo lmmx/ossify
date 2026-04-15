@@ -2,7 +2,7 @@ repo = "lmmx__pypdown"
 owner = "lmmx"
 name = "pypdown"
 packages = [
-    "pypdown",
+  "pypdown"
 ]
 archived = false
 priority = false

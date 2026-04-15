@@ -2,7 +2,7 @@ repo = "lmmx__aws-step-functions-pydantic"
 owner = "lmmx"
 name = "aws-step-functions-pydantic"
 packages = [
-    "aws-step-functions-pydantic",
+  "aws-step-functions-pydantic"
 ]
 archived = false
 priority = false

@@ -2,7 +2,7 @@ repo = "lmmx__pdf2up"
 owner = "lmmx"
 name = "pdf2up"
 packages = [
-    "pdf2up",
+  "pdf2up"
 ]
 archived = false
 priority = false

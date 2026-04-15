@@ -2,7 +2,7 @@ repo = "lmmx__prqrs"
 owner = "lmmx"
 name = "prqrs"
 packages = [
-    "prqrs",
+  "prqrs"
 ]
 archived = false
 priority = false

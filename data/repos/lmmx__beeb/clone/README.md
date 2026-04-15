@@ -85,14 +85,14 @@ These ChannelSchedule objects can be used to find programmes:
 
 ```py
 >>> for b in s.get_broadcast_by_title(r".*\bNews\b", regex=True, multi=True): b
-... 
+...
 00:00 on 17/03/2021 — Midnight News
 05:30 on 17/03/2021 — News Briefing
 12:00 on 17/03/2021 — News Summary
 18:00 on 17/03/2021 — Six O'Clock News
 >>> for b in s.get_broadcast_by_title(r".*\bnews\b", multi=True,
 ... case_insensitive=True, regex=True, synopsis=True): print(b)
-... 
+...
 00:00 on 17/03/2021 — Midnight News
 05:30 on 17/03/2021 — News Briefing
 06:00 on 17/03/2021 — Today
@@ -106,7 +106,7 @@ These ChannelSchedule objects can be used to find programmes:
 >>> for b in s.get_broadcast_by_title(
 ... r".*\b(pandemic|virus|coronavirus|Covid|vaccines?|vaccinations?|health|healthcare|NHS)\b",
 ... multi=True, case_insensitive=True, regex=True, synopsis=True): print(b)
-... 
+...
 10:00 on 17/03/2021 — Woman's Hour
 15:00 on 17/03/2021 — Money Box
 15:30 on 17/03/2021 — Inside Health
@@ -163,7 +163,7 @@ to avoid too much parameter passing).
 ```py
 >>> for i, b in enumerate(l.get_broadcast_by_title("Today", multi=True)):
 ...     print(f"{i:2}) {b}")
-... 
+...
  0) 06:00 on Wed 17/02/2021 — Today
  1) 06:00 on Thu 18/02/2021 — Today
  2) 06:00 on Fri 19/02/2021 — Today
@@ -198,7 +198,7 @@ to avoid too much parameter passing).
 ```py
 >>> for b in l.get_broadcast_by_title(r".*\b(vaccin.+?)\b", multi=True, case_insensitive=True,
 ... regex=True, synopsis=True): print(b)
-... 
+...
 15:30 on Wed 17/02/2021 — Inside Health
 18:00 on Wed 17/02/2021 — Six O'Clock News
 11:30 on Mon 22/02/2021 — How to Vaccinate the World
@@ -517,7 +517,7 @@ The default download directory is a package-internal path beneath `beeb.data.sto
 a subpath denoting: station » programme (by PID) » year » month » day. To change the directory,
 subclass or otherwise set `_root_store_dir`.
 
-- Another option is to initialise with `defer_pull=False`, set the attribute, 
+- Another option is to initialise with `defer_pull=False`, set the attribute,
   then call the `Stream`'s `pull()` and `preprocess()` methods.
 
 To download an episode by name and date, use the helper class method `Stream.from_name`:

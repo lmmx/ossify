@@ -54,27 +54,27 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-      
+
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
-      
+
       - uses: taiki-e/setup-cross-toolchain-action@v1
         with:
           target: ${{ matrix.target }}
         if: startsWith(matrix.os, 'ubuntu') && !contains(matrix.target, '-musl')
-      
+
       - uses: taiki-e/install-action@v2
         with:
           tool: cross
         if: contains(matrix.target, '-musl')
-      
+
       - run: echo "RUSTFLAGS=${RUSTFLAGS} -C target-feature=+crt-static" >> "${GITHUB_ENV}"
         if: endsWith(matrix.target, 'windows-msvc')
-      
+
       - name: Extract version from tag
         id: version
         run: echo "VERSION=${GITHUB_REF_NAME#genson-cli-}" >> $GITHUB_OUTPUT
-      
+
       - uses: taiki-e/upload-rust-binary-action@v1
         if: github.event_name == 'workflow_dispatch' || contains(github.event.release.tag_name, env.BINARY_NAME)
         with:

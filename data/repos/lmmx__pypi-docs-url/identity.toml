@@ -2,7 +2,7 @@ repo = "lmmx__pypi-docs-url"
 owner = "lmmx"
 name = "pypi-docs-url"
 packages = [
-    "pypi-docs-url",
+  "pypi-docs-url"
 ]
 archived = false
 priority = false

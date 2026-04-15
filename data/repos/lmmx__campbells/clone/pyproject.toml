@@ -1,30 +1,34 @@
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
 [project]
 name = "campbells"
 dynamic = ["version"]
 description = "A condensed web scraping library."
 authors = [
-    {name = "Louis Maddox", email = "louismmx@gmail.com"},
+  {name = "Louis Maddox", email = "louismmx@gmail.com"}
 ]
 keywords = [
-    "HTML",
-    "XML",
-    "parse",
-    "soup",
+  "HTML",
+  "XML",
+  "parse",
+  "soup"
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "Natural Language :: English",
-    "Topic :: Software Development :: Libraries",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Topic :: Text Processing :: Markup :: HTML",
-    "Topic :: Text Processing :: Markup :: SGML",
-    "Topic :: Text Processing :: Markup :: XML",
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "Topic :: Software Development :: Libraries",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Text Processing :: Markup :: HTML",
+  "Topic :: Text Processing :: Markup :: SGML",
+  "Topic :: Text Processing :: Markup :: XML"
 ]
 dependencies = [
-    "chinois>=0.2.0",
+  "chinois>=0.2.0"
 ]
 requires-python = ">=3.10"
 readme = "README.md"
@@ -32,34 +36,30 @@ license = {text = "MIT"}
 
 [project.optional-dependencies]
 html5lib = [
-    "html5lib>=1.1",
+  "html5lib>=1.1"
 ]
 lxml = [
-    "lxml>=4.9.3",
+  "lxml>=4.9.3"
 ]
 dev = [
-    "pre-commit>=4.1.0",
+  "pre-commit>=4.1.0"
 ]
-
-[project.urls]
-Homepage = "https://github.com/lmmx/campbells"
-Repository = "https://github.com/lmmx/campbells.git"
 
 [project.scripts]
 campbells = "campbells.main:prettify_html"
 campbells-diagnose = "campbells.diagnose:diagnose_html"
 
-[build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
-
-[tool.pdm]
-version = { source = "file", path = "src/campbells/__init__.py" }
-
-[tool.pdm.dev-dependencies]
-test = [
-    "pytest>=7.4.0",
-]
+[project.urls]
+Homepage = "https://github.com/lmmx/campbells"
+Repository = "https://github.com/lmmx/campbells.git"
 
 [tool.isort]
 known_first_party = ["campbells"]
+
+[tool.pdm]
+version = {source = "file", path = "src/campbells/__init__.py"}
+
+[tool.pdm.dev-dependencies]
+test = [
+  "pytest>=7.4.0"
+]

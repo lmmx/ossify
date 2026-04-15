@@ -1,5 +1,5 @@
 bots = [
-    "dependabot",
-    "precommit_ci",
+  "dependabot",
+  "precommit_ci"
 ]
 pinning = "unknown"

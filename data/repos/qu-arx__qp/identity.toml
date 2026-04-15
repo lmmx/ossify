@@ -2,7 +2,7 @@ repo = "qu-arx__qp"
 owner = "qu-arx"
 name = "qp"
 packages = [
-    "qpdb",
+  "qpdb"
 ]
 archived = false
 priority = false

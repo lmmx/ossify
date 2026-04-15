@@ -1,6 +1,11 @@
 [dependencies]
-ansi-to-html_lib = { package = "ansi-to-html", version = "0.2.2" }
+ansi-to-html_lib = {package = "ansi-to-html", version = "0.2.2"}
 pyo3 = "0.23.3"
+
+[dev-dependencies]
+cargo-husky = {version = "1.5.0", default-features = false, features = [
+  "user-hooks"
+]}
 
 [lib]
 name = "ansi_to_html"
@@ -18,8 +23,3 @@ codegen-units = 1
 panic = "abort"
 debug = false
 strip = "symbols"
-
-[dev-dependencies]
-cargo-husky = { version = "1.5.0", default-features = false, features = [
-  "user-hooks",
-] }

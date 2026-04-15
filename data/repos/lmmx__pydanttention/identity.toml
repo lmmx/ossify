@@ -2,7 +2,7 @@ repo = "lmmx__pydanttention"
 owner = "lmmx"
 name = "pydanttention"
 packages = [
-    "pydanttention",
+  "pydanttention"
 ]
 archived = false
 priority = false

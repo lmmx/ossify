@@ -2,7 +2,7 @@ repo = "lmmx__powell-opt"
 owner = "lmmx"
 name = "powell-opt"
 packages = [
-    "powell-opt",
+  "powell-opt"
 ]
 archived = false
 priority = false

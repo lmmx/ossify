@@ -18,13 +18,11 @@ resolver = "2"
 
 [workspace.dependencies]
 # Internal crates
-textum = { path = "crates/textum", version = "0.4.0" }
-textum-py = { path = "crates/textum-py", version = "0.4.0" }
-
-pyo3 = { features = ["abi3-py39", "extension-module"], version = "0.25" }
-
-facet-json = { version = "0.30.0" }
-ropey = { version = "1.6" }
+textum = {path = "crates/textum", version = "0.4.0"}
+textum-py = {path = "crates/textum-py", version = "0.4.0"}
+pyo3 = {features = ["abi3-py39", "extension-module"], version = "0.25"}
+facet-json = {version = "0.30.0"}
+ropey = {version = "1.6"}
 
 [workspace.package]
 authors = ["Louis Maddox <louismmx@gmail.com>"]

@@ -2,7 +2,7 @@ repo = "lmmx__powell-optimize"
 owner = "lmmx"
 name = "powell-optimize"
 packages = [
-    "powell-opt",
+  "powell-opt"
 ]
 archived = false
 priority = false

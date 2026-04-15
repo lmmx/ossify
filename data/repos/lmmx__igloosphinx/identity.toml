@@ -2,7 +2,7 @@ repo = "lmmx__igloosphinx"
 owner = "lmmx"
 name = "igloosphinx"
 packages = [
-    "igloosphinx",
+  "igloosphinx"
 ]
 archived = false
 priority = false

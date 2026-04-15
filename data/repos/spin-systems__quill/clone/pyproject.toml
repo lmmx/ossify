@@ -1,67 +1,67 @@
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
 [project]
 name = "ql"
 dynamic = ["version"]
 description = "spin.systems generator and driver"
 authors = [
-    {name = "Louis Maddox", email = "louismmx@gmail.com"},
+  {name = "Louis Maddox", email = "louismmx@gmail.com"}
 ]
 keywords = [
-    "website",
-    "staticjinja",
+  "website",
+  "staticjinja"
 ]
 classifiers = [
-    "Development Status :: 6 - Mature",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-    "Intended Audience :: Developers",
-    "Natural Language :: English",
-    "Topic :: Internet :: WWW/HTTP :: Site Management",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
+  "Development Status :: 6 - Mature",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "Topic :: Internet :: WWW/HTTP :: Site Management",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12"
 ]
 dependencies = [
-    "defopt",
-    "pandas",
-    "parse",
-    "pyyaml",
-    "gitpython",
-    "bs4",
-    "html5lib",
-    "aenum",
-    "staticjinja",
-    "markdown",
-    "pygments",
-    "python-frontmatter",
-    "dateparser",
-    "markdown-katex>=202112.1034",
-    "pathlib2",
-    "pydantic>=2.5.2",
+  "defopt",
+  "pandas",
+  "parse",
+  "pyyaml",
+  "gitpython",
+  "bs4",
+  "html5lib",
+  "aenum",
+  "staticjinja",
+  "markdown",
+  "pygments",
+  "python-frontmatter",
+  "dateparser",
+  "markdown-katex>=202112.1034",
+  "pathlib2",
+  "pydantic>=2.5.2"
 ]
 requires-python = ">=3.10,<3.13"
 readme = "README.md"
 license = {text = "MIT"}
 
-[project.urls]
-Homepage = "https://github.com/spin-systems/quill"
-Repository = "https://github.com/spin-systems/quill.git"
-
 [project.scripts]
 ql = "quill.fold.cli:standup_cli"
 cyl = "quill.fold.cli:cyl_cli"
 
-[build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
-
-[tool.pdm]
-version = { source = "file", path = "src/quill/__init__.py" }
-
-[tool.pdm.dev-dependencies]
-test = [
-    "pytest>=7.4.0",
-]
+[project.urls]
+Homepage = "https://github.com/spin-systems/quill"
+Repository = "https://github.com/spin-systems/quill.git"
 
 [tool.isort]
 known_first_party = ["quill"]
+
+[tool.pdm]
+version = {source = "file", path = "src/quill/__init__.py"}
+
+[tool.pdm.dev-dependencies]
+test = [
+  "pytest>=7.4.0"
+]

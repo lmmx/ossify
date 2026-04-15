@@ -1,44 +1,44 @@
 [build-system]
 build-backend = "uv_build"
 requires = [
-    "uv_build>=0.9.26,<0.10.0",
+  "uv_build>=0.9.26,<0.10.0"
 ]
 
 [dependency-groups]
 dev = [
-    "pre-commit>=4.1.0",
-    "pytest>=8.3.4",
+  "pre-commit>=4.1.0",
+  "pytest>=8.3.4"
 ]
 docs = [
-    "livereload>=2.7.1",
-    "mkdocs-extra-sass-mathshim>=0.1.0",
-    "mkdocs-material[imaging,recommended]>=9.5.2",
-    "mkdocs-section-index>=0.3.8",
-    "mkdocs>=1.5.3",
-    "mkdocstrings[python]>=0.24.0",
-    "ruff>=0.9.5",
+  "livereload>=2.7.1",
+  "mkdocs-extra-sass-mathshim>=0.1.0",
+  "mkdocs-material[imaging,recommended]>=9.5.2",
+  "mkdocs-section-index>=0.3.8",
+  "mkdocs>=1.5.3",
+  "mkdocstrings[python]>=0.24.0",
+  "ruff>=0.9.5"
 ]
 
 [project]
 authors = [
-    {email = "louismmx@gmail.com", name = "Louis Maddox"},
+  {email = "louismmx@gmail.com", name = "Louis Maddox"}
 ]
 classifiers = [
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Natural Language :: English",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: Implementation :: CPython",
-    "Programming Language :: Python",
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python"
 ]
 dependencies = [
-    "cliptargets>=0.1.2",
+  "cliptargets>=0.1.2"
 ]
 description = "Paste data as Python DataFrame definitions"
 name = "datapasta"
@@ -51,16 +51,16 @@ text = "MIT"
 
 [project.optional-dependencies]
 pandas = [
-    "pandas>=2.2.3",
+  "pandas>=2.2.3"
 ]
 polars = [
-    "polars>=1.21.0",
+  "polars>=1.21.0"
 ]
 polars-lts-cpu = [
-    "polars-lts-cpu>=1.21.0",
+  "polars-lts-cpu>=1.21.0"
 ]
 pyperclip = [
-    "pyperclip",
+  "pyperclip"
 ]
 
 [project.scripts]
@@ -72,20 +72,20 @@ Homepage = "https://github.com/lmmx/datapasta"
 
 [tool.ruff.lint]
 ignore = [
-    "C408",
-    "C901",
-    "E501",
-    "E722",
-    "E741",
+  "C408",
+  "C901",
+  "E501",
+  "E722",
+  "E741"
 ]
 select = [
-    "C",
-    "D",
-    "E",
-    "F",
-    "I",
-    "UP",
-    "W",
+  "C",
+  "D",
+  "E",
+  "F",
+  "I",
+  "UP",
+  "W"
 ]
 
 [tool.tomlsort]

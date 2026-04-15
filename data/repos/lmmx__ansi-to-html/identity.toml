@@ -2,7 +2,7 @@ repo = "lmmx__ansi-to-html"
 owner = "lmmx"
 name = "ansi-to-html"
 packages = [
-    "ansi-to-html-py",
+  "ansi-to-html-py"
 ]
 archived = false
 priority = false

@@ -2,8 +2,8 @@ repo = "lmmx__pydantic-schema-sync"
 owner = "lmmx"
 name = "pydantic-schema-sync"
 packages = [
-    "pydantic-schema-sync",
-    "pytest-pydantic-schema-sync",
+  "pydantic-schema-sync",
+  "pytest-pydantic-schema-sync"
 ]
 archived = false
 priority = false

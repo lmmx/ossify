@@ -2,7 +2,7 @@ repo = "lmmx__validate-call-safe"
 owner = "lmmx"
 name = "validate-call-safe"
 packages = [
-    "validate-call-safe",
+  "validate-call-safe"
 ]
 archived = false
 priority = false

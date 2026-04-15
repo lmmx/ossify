@@ -56,7 +56,7 @@ More information about MkDocs plugins is available in the [MkDocs documentation]
 
 ## Contributing
 
-Every contribution is appreciated—whether you're reporting a bug, asking a question, or submitting a pull request. Please report bugs or request features via [Github issues][github-issues].  
+Every contribution is appreciated—whether you're reporting a bug, asking a question, or submitting a pull request. Please report bugs or request features via [Github issues][github-issues].
 If you want to contribute code, please read the [Contribution Guidelines][contributing].
 
 [LibSass]: https://sass-lang.com/libsass

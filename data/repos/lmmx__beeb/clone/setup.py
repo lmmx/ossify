@@ -1,26 +1,27 @@
 from setuptools import setup, find_packages
 
-with open("README.md", "r") as fh:
+with open("README.md") as fh:
     long_description = fh.read()
 
 long_description = long_description.replace("beeb_logo.png", "beeb_logo_small.png")
 
-with open("requirements/default.txt", "r") as fh:
+with open("requirements/default.txt") as fh:
     reqs = fh.read().splitlines()
+
 
 def local_scheme(version):
     return ""
 
+
 def version_scheme(version):
     return version.tag.base_version
+
 
 setup(
     name="beeb",
     author="Louis Maddox",
     author_email="louismmx@gmail.com",
-    description=(
-        "A modern interface to the BBC Sounds radio catalogue"
-    ),
+    description=("A modern interface to the BBC Sounds radio catalogue"),
     license="MIT License",
     long_description=long_description,
     long_description_content_type="text/markdown",

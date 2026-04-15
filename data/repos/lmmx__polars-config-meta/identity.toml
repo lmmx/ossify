@@ -2,7 +2,7 @@ repo = "lmmx__polars-config-meta"
 owner = "lmmx"
 name = "polars-config-meta"
 packages = [
-    "polars-config-meta",
+  "polars-config-meta"
 ]
 archived = false
 priority = false

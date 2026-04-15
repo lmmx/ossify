@@ -2,7 +2,7 @@ repo = "lmmx__polars-lprof"
 owner = "lmmx"
 name = "polars-lprof"
 packages = [
-    "polars-lprof",
+  "polars-lprof"
 ]
 archived = false
 priority = false

@@ -61,7 +61,11 @@ async def _run_git(cmd: list[str], cwd: Path, timeout: float) -> tuple[int, str]
 
 
 async def _sparse_clone(
-    owner: str, name: str, dest: Path, sparse_paths: list[str], timeout: float
+    owner: str,
+    name: str,
+    dest: Path,
+    sparse_paths: list[str],
+    timeout: float,
 ) -> str:
     sentinel = dest / ".cloned"
     if sentinel.exists():
@@ -121,7 +125,11 @@ async def _run(repos: list[tuple[str, str, str]]) -> dict[str, int]:
         async with sem:
             dest = p["repos_dir"] / slug / "clone"
             res = await _sparse_clone(
-                owner, name, dest, cfg["paths"], cfg["timeout_seconds"]
+                owner,
+                name,
+                dest,
+                cfg["paths"],
+                cfg["timeout_seconds"],
             )
         counts[res] = counts.get(res, 0) + 1
         if res != "ok" and res != "cached":
@@ -147,6 +155,8 @@ def clone_all() -> Path:
         raise FileNotFoundError("No identity.toml files — run `ossify-repos` first")
     counts = asyncio.run(_run(repos))
     print(
-        "  Clone:", ", ".join(f"{k}={v}" for k, v in sorted(counts.items())), flush=True
+        "  Clone:",
+        ", ".join(f"{k}={v}" for k, v in sorted(counts.items())),
+        flush=True,
     )
     return paths()["repos_dir"]

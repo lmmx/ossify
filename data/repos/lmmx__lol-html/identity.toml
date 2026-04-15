@@ -2,7 +2,7 @@ repo = "lmmx__lol-html"
 owner = "lmmx"
 name = "lol-html"
 packages = [
-    "lol-html-py",
+  "lol-html-py"
 ]
 archived = false
 priority = false

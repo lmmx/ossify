@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
-with open("README.md", "r") as fh:
+with open("README.md") as fh:
     long_description = fh.read()
 
-with open("requirements.txt", "r") as fh:
+with open("requirements.txt") as fh:
     reqs = fh.read().splitlines()
 
 
