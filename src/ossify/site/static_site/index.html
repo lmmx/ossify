@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ossify</title>
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>ossify</h1>
+    <p class="subtitle">Open Source Software Intelligence For You</p>
+    <div id="stats"></div>
+  </header>
+
+  <section class="filters">
+    <label><input type="checkbox" id="hide-archived" checked> hide archived</label>
+    <label><input type="checkbox" id="hide-ok"> hide OK</label>
+    <label><input type="checkbox" id="only-failing"> only failing</label>
+    <label><input type="checkbox" id="only-priority"> only priority</label>
+  </section>
+
+  <div id="table"></div>
+
+  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

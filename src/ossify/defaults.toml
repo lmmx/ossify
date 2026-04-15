@@ -1,0 +1,59 @@
+[clone]
+# Sparse-checkout these paths only — same trick as trusty-pub
+paths = [
+  ".github",
+  "pyproject.toml",
+  "README.md",
+  "README.rst",
+  ".pre-commit-config.yaml",
+  "renovate.json",
+  ".github/renovate.json"
+]
+concurrency = 8
+timeout_seconds = 30
+
+[commits]
+window_days = 90
+max_commits = 500
+bot_email_patterns = [
+  "@users.noreply.github.com",
+  "dependabot",
+  "renovate",
+  "pre-commit-ci",
+  "github-actions"
+]
+bot_name_patterns = [
+  "dependabot",
+  "renovate",
+  "pre-commit-ci",
+  "github-actions",
+  "[bot]"
+]
+
+[derive]
+# Thresholds for non-exclusive state flags computed at site-build time
+unmaintained_after_days = 180
+inactive_after_days = 365
+
+[paths]
+data_dir = "data"
+cache_dir = "data/cache"
+repos_dir = "data/repos"
+packages_dir = "data/packages"
+parquet_path = "data/repos.parquet"
+site_dir = "data/site"
+
+[pypi]
+user_url = "https://pypi.org/user/{username}/"
+json_url = "https://pypi.org/pypi/{package}/json"
+package_selector = "h3.package-snippet__title"
+user_agent = "ossify/0.1.0 (+https://github.com/lmmx/ossify)"
+json_max_age_days = 1
+
+[scrape]
+concurrency = 5
+request_delay_seconds = 0.2
+
+[user]
+pypi_username = "lmmx"
+github_username = "lmmx"
