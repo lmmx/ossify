@@ -6,6 +6,14 @@ Repo maintenance intelligence over your published Python packages. Rules
 infer structural signals (tests on CI, trusted publishing, dependency
 bots, modernisation drift, commit attribution) — no manual labelling.
 
+## Installation
+
+To install from PyPI:
+
+```
+uv pip install ossify-observatory
+```
+
 ## Quickstart
 
 Set your PyPI username in `src/ossify/defaults.toml` (`[user] pypi_username`),

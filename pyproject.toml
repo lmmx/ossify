@@ -3,7 +3,7 @@ requires = ["uv_build>=0.11.6,<0.12"]
 build-backend = "uv_build"
 
 [project]
-name = "ossify"
+name = "ossify-observatory"
 version = "0.1.0"
 description = "Personal OSS repo maintenance status tracking"
 readme = "README.md"
@@ -36,3 +36,7 @@ ossify-site = "ossify.site.build:build"
   "E401",
   "F401"
 ]
+
+[tool.uv.build-backend]
+module-name = "ossify"
+module-root = "src"

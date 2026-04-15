@@ -3,7 +3,7 @@ revision = 3
 requires-python = ">=3.13"
 
 [options]
-exclude-newer = "2026-04-12T13:48:08.866835992Z"
+exclude-newer = "2026-04-12T14:01:15.508446625Z"
 exclude-newer-span = "P3D"
 
 [[package]]
@@ -92,7 +92,7 @@ wheels = [
 ]
 
 [[package]]
-name = "ossify"
+name = "ossify-observatory"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
