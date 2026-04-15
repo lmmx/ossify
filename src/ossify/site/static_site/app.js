@@ -62,6 +62,19 @@ function row(r) {
   ].map(c => ({ data: c, formatted: typeof c === "string" && c.includes("<") ? gridjs.html(c) : c }));
 }
 
+function parseAge(str) {
+  if (!str || str === "—") return Infinity;
+  if (str === "today") return 0;
+
+  const num = parseFloat(str);
+
+  if (str.endsWith("d")) return num;
+  if (str.endsWith("mo")) return num * 30;
+  if (str.endsWith("y")) return num * 365;
+
+  return Infinity;
+}
+
 async function init() {
   const j = await (await fetch("data.json")).json();
   ALL = j.repos;
@@ -69,9 +82,36 @@ async function init() {
 
   grid = new gridjs.Grid({
     columns: [
-      "★", "Repo", "Packages", "State",
-      "Last commit", "Last human", "Human %",
-      "Versions", "Last release", "Cadence",
+      "★", "Repo", "Packages",
+      {
+        name: "State",
+        sort: {
+          compare: (a, b) => a.localeCompare(b)
+        }
+      },
+
+      {
+        name: "Last commit",
+        sort: {
+          compare: (a, b) => parseAge(a) - parseAge(b)
+        }
+      },
+      {
+        name: "Last human",
+        sort: {
+          compare: (a, b) => parseAge(a) - parseAge(b)
+        }
+      },
+      "Human %",
+      "Versions",
+      {
+        name: "Last release",
+        sort: {
+          compare: (a, b) => parseAge(a) - parseAge(b)
+        }
+      },
+
+      "Cadence",
       "Tests", "CI", "CI tests", "pre-commit",
       "Publish", "Auth", "Bots", "Build",
       "PDM drift", "Token drift", "Badges",
