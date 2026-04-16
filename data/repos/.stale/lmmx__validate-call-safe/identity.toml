@@ -1,0 +1,10 @@
+repo = "lmmx__validate-call-safe"
+owner = "lmmx"
+name = "validate-call-safe"
+packages = [
+  "validate-call-safe"
+]
+archived = false
+priority = true
+description = "Safe, non-error-raising, alternative to Pydantic validate_call decorator"
+url = "https://github.com/lmmx/validate-call-safe"

@@ -1,0 +1,7 @@
+last_commit_at = "2026-04-14T14:31:54+00:00"
+last_human_commit_at = "2026-04-14T14:31:54+00:00"
+last_bot_commit_at = "2026-04-14T14:21:28+00:00"
+human_commits_window = 6
+bot_commits_window = 9
+human_ratio_window = 0.4
+window_days = 90

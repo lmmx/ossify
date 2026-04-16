@@ -1,0 +1,10 @@
+repo = "lmmx__classipypi"
+owner = "lmmx"
+name = "classipypi"
+packages = [
+  "classipypi"
+]
+archived = false
+priority = false
+description = "Neurosymbolic PyPI package classifier selector."
+url = "https://github.com/lmmx/classipypi"

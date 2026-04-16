@@ -1,4 +1,4 @@
-version_count = 27
-last_release_at = "2023-04-21T21:11:43.641954+00:00"
-publish_mode = "unknown"
-publish_auth = "unknown"
+version_count = 29
+last_release_at = "2026-04-15T23:52:15.918361+00:00"
+publish_mode = "ci"
+publish_auth = "trusted"

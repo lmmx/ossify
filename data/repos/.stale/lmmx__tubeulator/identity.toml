@@ -1,0 +1,10 @@
+repo = "lmmx__tubeulator"
+owner = "lmmx"
+name = "tubeulator"
+packages = [
+  "tubeulator"
+]
+archived = false
+priority = true
+description = "TfL open data interface library."
+url = "https://github.com/lmmx/tubeulator"

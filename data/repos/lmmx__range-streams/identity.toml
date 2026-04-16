@@ -6,5 +6,5 @@ packages = [
 ]
 archived = false
 priority = true
-description = "Streaming via range requests."
+description = "Streaming via range requests in Python"
 url = "https://github.com/lmmx/range-streams"

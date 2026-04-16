@@ -1,0 +1,10 @@
+repo = "lmmx__dex"
+owner = "lmmx"
+name = "dex"
+packages = [
+  "spindex"
+]
+archived = false
+priority = false
+description = "Indexer under construction."
+url = "https://github.com/lmmx/dex"

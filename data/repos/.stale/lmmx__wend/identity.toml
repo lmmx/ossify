@@ -1,0 +1,10 @@
+repo = "lmmx__wend"
+owner = "lmmx"
+name = "wend"
+packages = [
+  "wend"
+]
+archived = false
+priority = false
+description = "Templated paths using t-strings"
+url = "https://github.com/lmmx/wend"

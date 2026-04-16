@@ -1,0 +1,10 @@
+repo = "lmmx__polars-ls"
+owner = "lmmx"
+name = "polars-ls"
+packages = [
+  "polars-ls"
+]
+archived = false
+priority = false
+description = "List directory contents as Polars DataFrames"
+url = "https://github.com/lmmx/polars-ls"

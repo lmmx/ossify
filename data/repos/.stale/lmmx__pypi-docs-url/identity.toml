@@ -1,0 +1,10 @@
+repo = "lmmx__pypi-docs-url"
+owner = "lmmx"
+name = "pypi-docs-url"
+packages = [
+  "pypi-docs-url"
+]
+archived = false
+priority = false
+description = "Locate a project’s Intersphinx inventory from PyPI metadata and GitHub Actions workflow YAML."
+url = "https://github.com/lmmx/pypi-docs-url"

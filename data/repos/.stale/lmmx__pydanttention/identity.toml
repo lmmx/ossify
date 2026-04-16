@@ -1,0 +1,10 @@
+repo = "lmmx__pydanttention"
+owner = "lmmx"
+name = "pydanttention"
+packages = [
+  "pydanttention"
+]
+archived = false
+priority = false
+description = "Transformer model attention in Pydantic."
+url = "https://github.com/lmmx/pydanttention"

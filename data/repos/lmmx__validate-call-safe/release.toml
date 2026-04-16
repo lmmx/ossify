@@ -1,4 +1,4 @@
 version_count = 8
 last_release_at = "2024-09-05T23:30:27.986959+00:00"
-publish_mode = "unknown"
-publish_auth = "unknown"
+publish_mode = "ci"
+publish_auth = "trusted"

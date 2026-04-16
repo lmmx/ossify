@@ -1,0 +1,10 @@
+repo = "lmmx__prqrs"
+owner = "lmmx"
+name = "prqrs"
+packages = [
+  "prqrs"
+]
+archived = false
+priority = false
+description = "Benchmarked priority queue implementation in Rust"
+url = "https://github.com/lmmx/prqrs"

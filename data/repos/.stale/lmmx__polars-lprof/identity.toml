@@ -1,0 +1,10 @@
+repo = "lmmx__polars-lprof"
+owner = "lmmx"
+name = "polars-lprof"
+packages = [
+  "polars-lprof"
+]
+archived = false
+priority = false
+description = "Read line profiler reports into Polars DataFrames"
+url = "https://github.com/lmmx/polars-lprof"

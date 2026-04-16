@@ -1,0 +1,10 @@
+repo = "lmmx__refactory"
+owner = "lmmx"
+name = "refactory"
+packages = [
+  "refactory"
+]
+archived = false
+priority = false
+description = "Refactor utility with patterns composed of validated AST rules."
+url = "https://github.com/lmmx/refactory"

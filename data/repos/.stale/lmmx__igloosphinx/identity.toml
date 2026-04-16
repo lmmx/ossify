@@ -1,0 +1,10 @@
+repo = "lmmx__igloosphinx"
+owner = "lmmx"
+name = "igloosphinx"
+packages = [
+  "igloosphinx"
+]
+archived = false
+priority = false
+description = "Accessing Intersphinx inventories for Python packages using PyPI metadata to locate documentation sites"
+url = "https://github.com/lmmx/igloosphinx"

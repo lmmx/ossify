@@ -1,0 +1,10 @@
+repo = "lmmx__botodto"
+owner = "lmmx"
+name = "botodto"
+packages = [
+  "botodto"
+]
+archived = false
+priority = false
+description = "Pydantic interface codegen from Amazon Smithy JSON schemas"
+url = "https://github.com/lmmx/botodto"
