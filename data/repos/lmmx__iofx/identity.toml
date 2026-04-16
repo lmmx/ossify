@@ -4,7 +4,7 @@ name = "iofx"
 packages = [
   "iofx"
 ]
-archived = false
+archived = true
 priority = false
 description = "IO effect handlers for Python"
 url = "https://github.com/lmmx/iofx"

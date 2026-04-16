@@ -4,7 +4,7 @@ name = "aws-step-functions-pydantic"
 packages = [
   "aws-step-functions-pydantic"
 ]
-archived = false
+archived = true
 priority = false
 description = "Pydantic models for AWS step functions"
 url = "https://github.com/lmmx/aws-step-functions-pydantic"

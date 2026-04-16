@@ -4,7 +4,7 @@ name = "bisque"
 packages = [
   "bisque"
 ]
-archived = false
+archived = true
 priority = false
 description = "Web scraping into structured Pydantic data models."
 url = "https://github.com/lmmx/bisque"

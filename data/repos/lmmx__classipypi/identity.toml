@@ -4,7 +4,7 @@ name = "classipypi"
 packages = [
   "classipypi"
 ]
-archived = false
+archived = true
 priority = false
 description = "Neurosymbolic PyPI package classifier selector."
 url = "https://github.com/lmmx/classipypi"
