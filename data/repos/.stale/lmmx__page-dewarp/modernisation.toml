@@ -1,4 +1,0 @@
-build_system = "uv"
-drift_pdm_to_uv = false
-drift_local_to_ci_publish = false
-drift_token_to_trusted = false

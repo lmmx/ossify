@@ -56,6 +56,12 @@ Stages:
   site       Build static site from parquet
 ```
 
+### Regeneration
+
+Since the priority is manual, and PyPI doesn't like scrapers, to regenerate
+save the HTML page over the cached one at your username (or TODO: make it scrape again,
+not sure what changed) and run the `just regenerate` recipe.
+
 ## Layout
 
 - `data/cache/` — fetched HTML, PyPI JSON, commit logs (re-fetchable)

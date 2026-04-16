@@ -1,4 +1,0 @@
-bots = [
-  "precommit_ci"
-]
-pinning = "unknown"
