@@ -1,5 +1,0 @@
-bots = [
-  "dependabot",
-  "precommit_ci"
-]
-pinning = "unknown"
