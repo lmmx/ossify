@@ -4,11 +4,10 @@ from __future__ import annotations
 
 import json
 import shutil
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
-
-from ossify.defaults import resolve, paths
+from ossify.defaults import paths, resolve
 from ossify.models.derived import derive
 from ossify.persist import _load_record  # internal, fine for now
 
@@ -25,7 +24,7 @@ def build() -> Path:
             shutil.copy2(f, out / f.name)
 
     cfg = resolve()["derive"]
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
 
     rows: list[dict] = []
     for slug_dir in sorted(p["repos_dir"].iterdir()):

@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
-from ._base import Frozen, Ratio, NonNegInt
+
+from ._base import Frozen, NonNegInt, Ratio
 
 
 class Activity(Frozen):

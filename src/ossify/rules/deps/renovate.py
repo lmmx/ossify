@@ -1,6 +1,8 @@
 from __future__ import annotations
-from .._base import RepoContext, RuleResult
+
 from ossify.models.enums import DepBot
+
+from .._base import RepoContext, RuleResult
 
 name = "deps.renovate"
 

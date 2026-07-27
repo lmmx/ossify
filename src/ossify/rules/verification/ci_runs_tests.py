@@ -4,6 +4,7 @@ STUB — port the workflow_parser pattern from trusty-pub here.
 """
 
 from __future__ import annotations
+
 from .._base import RepoContext, RuleResult
 
 name = "verification.ci_runs_tests"

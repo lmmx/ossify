@@ -6,25 +6,25 @@ Adding a signal: drop a new module here and import it below.
 
 from __future__ import annotations
 
-from ._base import Rule, RepoContext
+from ._base import RepoContext, Rule
 
 # Activity
 from .activity import commit_attribution
 
-# Verification
-from .verification import has_tests, ci_runs_tests, precommit
-
-# Release
-from .release import version_count, trusted_publishing
-
 # Deps
-from .deps import renovate, dependabot, precommit_ci
+from .deps import dependabot, precommit_ci, renovate
 
 # Modernisation
 from .modernisation import build_system, drift_pdm_to_uv, drift_token_to_trusted
 
 # Presentation
 from .presentation import readme_badges
+
+# Release
+from .release import trusted_publishing, version_count
+
+# Verification
+from .verification import ci_runs_tests, has_tests, precommit
 
 ALL_RULES: list[Rule] = [
     commit_attribution.rule,

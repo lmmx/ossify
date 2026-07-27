@@ -15,7 +15,7 @@ from pathlib import Path
 import polars as pl
 from tqdm import tqdm
 
-from ossify.defaults import resolve, paths
+from ossify.defaults import paths, resolve
 from ossify.idem import is_fresh
 
 
