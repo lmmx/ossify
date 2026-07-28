@@ -8,8 +8,8 @@ from pathlib import Path
 import httpx
 from tqdm import tqdm
 
-from ossify.defaults import resolve, paths
-from ossify.idem import is_fresh, atomic_write_bytes
+from ossify.defaults import paths, resolve
+from ossify.idem import atomic_write_bytes, is_fresh
 
 
 def _list_path() -> Path:

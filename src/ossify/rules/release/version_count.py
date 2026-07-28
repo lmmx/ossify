@@ -1,6 +1,8 @@
 from __future__ import annotations
+
 import json
 from datetime import datetime
+
 from .._base import RepoContext, RuleResult
 
 name = "release.version_count"

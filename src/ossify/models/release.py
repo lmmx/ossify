@@ -1,6 +1,7 @@
 from datetime import datetime
+
 from ._base import Frozen, NonNegInt
-from .enums import PublishMode, PublishAuth
+from .enums import PublishAuth, PublishMode
 
 
 class Release(Frozen):

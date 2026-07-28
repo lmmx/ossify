@@ -1,4 +1,5 @@
 from pydantic import HttpUrl
+
 from ._base import Frozen
 
 

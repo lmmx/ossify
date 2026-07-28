@@ -34,7 +34,7 @@ async def _run_git(cmd: list[str], cwd: Path, timeout: float) -> tuple[int, str]
     )
     try:
         _, err = await asyncio.wait_for(proc.communicate(), timeout=timeout)
-    except asyncio.TimeoutError:
+    except TimeoutError:
         proc.kill()
         try:
             await proc.communicate()

@@ -2,11 +2,12 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 import polars as pl
 
 from ossify.defaults import resolve
+
 from .._base import RepoContext, RuleResult
 
 name = "activity.commit_attribution"
@@ -34,7 +35,7 @@ def rule(ctx: RepoContext) -> RuleResult | None:
     name_pats = [p.lower() for p in cfg["bot_name_patterns"]]
     email_pats = [p.lower() for p in cfg["bot_email_patterns"]]
     window_days = cfg["window_days"]
-    cutoff = datetime.now(timezone.utc) - timedelta(days=window_days)
+    cutoff = datetime.now(UTC) - timedelta(days=window_days)
 
     # GitHub returns ISO-8601 with Z suffix, e.g. 2024-03-15T12:34:56Z.
     # Parse eagerly with explicit format; coerce errors to null.

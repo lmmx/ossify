@@ -1,5 +1,7 @@
 from __future__ import annotations
+
 import re
+
 from .._base import RepoContext, RuleResult
 
 name = "presentation.readme_badges"

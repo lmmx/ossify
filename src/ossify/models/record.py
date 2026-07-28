@@ -1,11 +1,11 @@
 from ._base import Frozen
-from .identity import Identity
 from .activity import Activity
-from .verification import Verification
-from .release import Release
 from .deps import Deps
+from .identity import Identity
 from .modernisation import Modernisation
 from .presentation import Presentation
+from .release import Release
+from .verification import Verification
 
 
 class RepoRecord(Frozen):

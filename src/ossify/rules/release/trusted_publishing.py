@@ -1,8 +1,10 @@
 """Detect Trusted Publishing — port the rules from trusty-pub here."""
 
 from __future__ import annotations
+
+from ossify.models.enums import PublishAuth, PublishMode
+
 from .._base import RepoContext, RuleResult
-from ossify.models.enums import PublishMode, PublishAuth
 
 name = "release.trusted_publishing"
 

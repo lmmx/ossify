@@ -1,7 +1,10 @@
 from __future__ import annotations
+
 import tomllib
-from .._base import RepoContext, RuleResult
+
 from ossify.models.enums import BuildSystem
+
+from .._base import RepoContext, RuleResult
 
 name = "modernisation.build_system"
 

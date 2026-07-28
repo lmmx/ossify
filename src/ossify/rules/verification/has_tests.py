@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 from .._base import RepoContext, RuleResult
 
 name = "verification.has_tests"

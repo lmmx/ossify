@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
+
 from .record import RepoRecord
 
 
@@ -29,7 +30,7 @@ def derive(
     inactive_after_days: int,
     now: datetime | None = None,
 ) -> DerivedState:
-    now = now or datetime.now(timezone.utc)
+    now = now or datetime.now(UTC)
     since_commit = _age(rec.activity.last_commit_at, now)
     since_human = _age(rec.activity.last_human_commit_at, now)
 

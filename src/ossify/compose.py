@@ -12,14 +12,14 @@ import asyncio
 import tempfile
 import time
 import tomllib
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
 import tomli_w
 from tqdm import tqdm
 
-from ossify.defaults import resolve, paths
+from ossify.defaults import paths, resolve
 from ossify.extract.clone import sparse_clone
 from ossify.idem import atomic_write_text
 from ossify.models import CATEGORY_MODELS, Identity
@@ -46,7 +46,7 @@ def _is_fresh(slug_dir: Path, max_age_days: float) -> bool:
 
 def _stamp(slug_dir: Path) -> None:
     (slug_dir / _SENTINEL).write_text(
-        datetime.now(timezone.utc).isoformat() + "\n",
+        datetime.now(UTC).isoformat() + "\n",
         encoding="utf-8",
     )
 

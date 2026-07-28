@@ -1,18 +1,18 @@
-from .identity import Identity
 from .activity import Activity
-from .verification import Verification
-from .release import Release
 from .deps import Deps
+from .enums import (
+    BuildSystem,
+    DepBot,
+    Pinning,
+    PublishAuth,
+    PublishMode,
+)
+from .identity import Identity
 from .modernisation import Modernisation
 from .presentation import Presentation
 from .record import RepoRecord
-from .enums import (
-    BuildSystem,
-    PublishMode,
-    PublishAuth,
-    DepBot,
-    Pinning,
-)
+from .release import Release
+from .verification import Verification
 
 CATEGORY_MODELS = {
     "identity": Identity,
@@ -25,18 +25,18 @@ CATEGORY_MODELS = {
 }
 
 __all__ = [
-    "Identity",
-    "Activity",
-    "Verification",
-    "Release",
-    "Deps",
-    "Modernisation",
-    "Presentation",
-    "RepoRecord",
-    "BuildSystem",
-    "PublishMode",
-    "PublishAuth",
-    "DepBot",
-    "Pinning",
     "CATEGORY_MODELS",
+    "Activity",
+    "BuildSystem",
+    "DepBot",
+    "Deps",
+    "Identity",
+    "Modernisation",
+    "Pinning",
+    "Presentation",
+    "PublishAuth",
+    "PublishMode",
+    "Release",
+    "RepoRecord",
+    "Verification",
 ]
