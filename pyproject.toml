@@ -7,7 +7,7 @@ name = "ossify-observatory"
 version = "0.1.0"
 description = "Personal OSS repo maintenance status tracking"
 readme = "README.md"
-authors = [{name = "Louis Maddox", email = "louismmx@gmail.com"}]
+authors = [{ name = "Louis Maddox", email = "louismmx@gmail.com" }]
 requires-python = ">=3.13"
 dependencies = [
   "httpx>=0.28",
